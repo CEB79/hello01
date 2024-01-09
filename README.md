@@ -1,6 +1,6 @@
 # # # # 본인이 작성한 소스와 남이 작업한 소스 병합하기 # # # #
 1. 원본 소스 클론(복사) 하기 : (최초 1회만 진행)
-git clone git@github.com:CEB79/hello01.git
+git clone https://github.com/CEB79/hello01.git
 2. 내 고유한 저장소 만들기 : (최초 1회만 진행)
 git checkout -b (본인이 원하는 저장소 이름 )
 클론(복사) 받은 디렉토리에서 작업 진행해 주세요.
