@@ -7,6 +7,7 @@ import Login from '../views/login.vue'
 import SignChack from '../views/SignChack.vue'
 import SignUp from '../views/SignUp.vue'
 
+
 const routes = [
     {
         path: '/',
@@ -26,8 +27,8 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory(),
     routes
 })
-
+// process.env.BASE_URL
 export default router
