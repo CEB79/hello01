@@ -1,17 +1,17 @@
-const withPrefix = (prefix, routes) =>
-    routes.map((route) => {
-    route.path = prefix + route.path;
-    return route;
-});
+// const withPrefix = (prefix, routes) =>
+//     routes.map((route) => {
+//     route.path = prefix + route.path;
+//     return route;
+// });
 const pageRouter = {
     path: "/",
     name: "layout",
-    redirect: "/main",
+    redirect: "/HelloWorld",
     component: () => import("@/layout/index.vue"),
     children: [
         {
-            path: "/main",
-            name: "main",
+            path: "/HelloWorld",
+            name: "HelloWorld",
             component: () => import("@/views/bl_og.vue"),
         },
         ...withPrefix("/", [
