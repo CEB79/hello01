@@ -8,19 +8,20 @@
                 </div>
                 <div class="loginform">
                     <label for="id"><i class="bi bi-file-person" />ID</label>
-                    <b-form-input id="id" placeholder="아이디를 입력해 주세요" />
+                    <b-form-input id="id" placeholder=" 아이디를 입력해 주세요" />
                     <label for="pass"><i class="bi bi-lock" />PW</label>
-                    <b-form-input type="password" id="pass" placeholder="비밀번호를 입력해 주세요" />
+                    <b-form-input type="password" id="pass" placeholder=" 비밀번호를 입력해 주세요" />
                 </div>
                 <div class="checkForm" >
                     <input type="checkbox" name="IdSave" class="IdSave"> ID 저장
                 </div>
                 <div class="FindForm">
-                    <a href="#" cass="Find">ID/PW 찾기</a>
+                    <a href="#" class="Find">ID/PW 찾기</a>
+                    
                 </div>
                 <div class="btnwrap">
                     <b-button variant="login">로그인</b-button>
-                    <a href="#"><b-button variant="join">회원가입</b-button></a>
+                    <a href="SignChack"><b-button variant="join">회원가입</b-button></a>
                 </div>
         </div>
         </div>
@@ -31,15 +32,18 @@
 </script>
 <style>
 .body{
-    margin: 20% 0;
-    padding:  20% 30%;
-    border: solid 1px;
+    margin: 0 0;
+    padding:  10% 30%;
+    
     
 }
 .LoginHead{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 50px;
+    font-size: 45px;
+}
+.loginform{
+    margin: 5px 0;
 }
 .IdSave{
     flex: 1;
@@ -58,4 +62,17 @@
     text-align: right;
     width: 50%;
 }
+.btn-login { 
+    background: #f7f0ce; 
+    color: #000000; 
+    }
+.btn-join { 
+    background: #f7f0ce; 
+    color: #000; 
+    }
+.btnwrap{
+    width: 90%;
+    margin: 40px auto;
+}
+
 </style>
