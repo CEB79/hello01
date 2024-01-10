@@ -44,6 +44,16 @@ const pageRouter = {
             path: "/company",
             name: "company",
             component: () => import("@/views/company.vue"),
+        }, 
+        {
+            path: "/SignChack",
+            name: "SignChack",
+            component: () => import("@/views/SignChack.vue"),
+        },
+        {
+            path: "/SignUp",
+            name: "SignUp",
+            component: () => import("@/views/SignUp.vue"),
         },
     ],
 };
