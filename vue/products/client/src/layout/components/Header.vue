@@ -8,7 +8,7 @@
                     </button>
                 </div>
 
-                <nav class="humberger__menu__nav mobile-menu">
+                <nav class="header__menu">
                     <ul>
                         <li class="active" v-on:click="goToPage('/main')">홈</li>
                         <li class="active" v-on:click="goToPage('/recipe')">레시피</li>
@@ -53,6 +53,93 @@
 
 <style scoped>
 
+/*************************오가닉 header*************************/
+.header__menu {
+	padding: 24px 0;
+}
+
+.header__menu ul li {
+	list-style: none;
+	display: inline-block;
+	margin-right: 50px;
+	position: relative;
+}
+
+.header__menu ul li .header__menu__dropdown {
+	position: absolute;
+	left: 0;
+	top: 50px;
+	background: #222222;
+	width: 180px;
+	z-index: 9;
+	padding: 5px 0;
+	-webkit-transition: all, 0.3s;
+	-moz-transition: all, 0.3s;
+	-ms-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.header__menu ul li .header__menu__dropdown li {
+	margin-right: 0;
+	display: block;
+}
+
+.header__menu ul li .header__menu__dropdown li:hover>a {
+	color: #7fad39;
+}
+
+.header__menu ul li .header__menu__dropdown li a {
+	text-transform: capitalize;
+	color: #ffffff;
+	font-weight: 400;
+	padding: 5px 15px;
+}
+
+.header__menu ul li.active a {
+	color: #7fad39;
+}
+
+.header__menu ul li:hover .header__menu__dropdown {
+	top: 30px;
+	opacity: 1;
+	visibility: visible;
+}
+
+.header__menu ul li:hover>a {
+	color: #7fad39;
+}
+
+.header__menu ul li:last-child {
+	margin-right: 0;
+}
+
+.header__menu ul li a {
+	font-size: 14px;
+	color: #252525;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+	-webkit-transition: all, 0.3s;
+	-moz-transition: all, 0.3s;
+	-ms-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+	padding: 5px 0;
+	display: block;
+}
+/*************************오가닉 header*************************/
+
+/************************button*************************/
+/* 버튼모양 */
+button {font-family:'NotoL','Malgun Gothic','맑은고딕','돋움',dotum, sans-serif;font-size:12px;color:#919090;line-height:1.5;letter-spacing:0;vertical-align:middle; background:none; border:none;}
+
+
+
+
+
 /* 로고, 메뉴 */
 .contentbox {
     /* text-align: center; */
@@ -61,6 +148,7 @@
     margin: 0 auto;
     padding: 80px 20px;
 }
+
 
 .topmenu .contentbox {
     display: flex;
@@ -84,7 +172,6 @@
 
 /* 메뉴바 마우스오버 */
 .active:hover{
-    border-style: groove;
     border-color: rgb(134, 245, 100);
     background-color: rgb(152, 226, 129);
 }
@@ -100,6 +187,7 @@
     background-color: #ddd;
     vertical-align: middle;
 }
+
 
 nav ul { 
     /* 가로설정 */
@@ -143,5 +231,7 @@ nav ul {
 	opacity: 0.1;
 	content: "";
 }
+
+
 
 </style>
