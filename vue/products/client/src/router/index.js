@@ -8,7 +8,7 @@ import SignChack from '../views/SignChack.vue'
 import SignUp from '../views/SignUp.vue'
 import IdPw from '../views/IdPw.vue'
 import UserControl from '../views/UserControl.vue'
-
+import main from '../views/main.vue'
 const routes = [
     {
         path: '/',
@@ -34,6 +34,11 @@ const routes = [
         path: '/UserControl',
         name: 'UserControl',
         component: UserControl
+    },
+    {
+        path: '/main',
+        name: 'main',
+        component: main
     }
 ]
 

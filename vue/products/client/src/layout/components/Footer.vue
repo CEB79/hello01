@@ -22,3 +22,18 @@
         </div>
     </footer>
 </template>
+
+<style scoped>
+
+.botinfo {
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+    background: #ebebeb;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+}
+
+</style>
