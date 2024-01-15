@@ -34,7 +34,7 @@
           <li><a href="/category/search.asp?s_value=치즈듬뿍">#치즈듬뿍</a></li>
           <li><a href="/category/search.asp?s_value=캠핑">#캠핑</a></li>
           <li><a href="/category/search.asp?s_value=간단 꿀조합">#간단 꿀조합</a></li>
-        </ul>
+        </ul> 
       </div>
     </div>   
     <!-- 메인3-1 -- 인기검색어 부분 -->
