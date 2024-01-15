@@ -8,10 +8,10 @@
     <!-- <div id="mainslider"> -->
       <splide :options="options">
         <splide-slide>
-          <img src="@/img/main_1.png" alt="main1">
+          <img src="../../public/common/img/img_JY/main_1.png" alt="main1">
         </splide-slide>
         <splide-slide>
-          <img src="@\img\main_2.png" alt="main2">
+          <img src="../../public/common/img/img_JY/main_2.png" alt="main2">
         </splide-slide>
         <!-- <splide-slide>
         <img src="@/img/main_3.jpg" alt="main3">
@@ -46,7 +46,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="blog__item">
               <div class="blog__item__pic">
-                  <img src="@/img/siteint_1.jpg" alt="">
+                  <img src="../../public/common/img/img_JY/siteint_1.jpg" alt="">
               </div>
               <div class="blog__item__text">
                   <ul>
@@ -63,7 +63,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="blog__item">
               <div class="blog__item__pic">
-                  <img src="@/img/siteint_2.jpg" alt="">
+                  <img src="../../public/common/img/img_JY/siteint_2.jpg" alt="">
               </div>
               <div class="blog__item__text">
                   <ul>
@@ -109,12 +109,15 @@
 } */
 
 /* main-3 전체적용 css */
+
+
 .content {
 
   /* position: relative; */
   /* width: 1280px; */
 
-  margin: 0 auto;
+  margin: 50px auto;
+  text-align: center;
   /* vertical-align: top; */
   /* display: flex; */
   
