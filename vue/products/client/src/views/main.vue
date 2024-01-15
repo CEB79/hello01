@@ -1,7 +1,11 @@
 <template>
-    <!-- 메인 1번 -->
+
+  <div class="content section01">
+
+
+        <!-- 메인 1번 -->
     <!-- 플러그인 설치 " npm install @splidejs/vue-splide " 설치해야 작동됨-->
-    <div id="mainslider">
+    <!-- <div id="mainslider"> -->
       <splide :options="options">
         <splide-slide>
           <img src="@/img/main_1.png" alt="main1">
@@ -13,14 +17,12 @@
         <img src="@/img/main_3.jpg" alt="main3">
         </splide-slide> -->
       </splide>
-  </div>
+  <!-- </div> -->
 
 
-
-  <div class="content section01">
     <!-- 메인3-1 -- 인기검색어 부분 -->
     <div class="sec01_tag">
-      <h2 class="sec01_tag_h2">이건 어때요?<strong>인기 검색어</strong></h2>
+      <h2>이건 어때요?<strong>인기 검색어</strong></h2>
       <p>고민을 덜어주는 추천 검색어</p>
       <div class="Tag">
         <ul>
@@ -34,7 +36,7 @@
           <li><a href="/category/search.asp?s_value=간단 꿀조합">#간단 꿀조합</a></li>
         </ul>
       </div>
-    </div>	
+    </div>   
     <!-- 메인3-1 -- 인기검색어 부분 -->
 
 
@@ -82,17 +84,17 @@
 
     <!-- 메인3-3 -- 꿀팁 소개 부분 -->
     <div class="sec04_tip col-4">
-				<a class="sec04_tip_a" href="../category/tip.asp">
-					<h2>오뚜기의<br>
-					쉽고 간단한<br>
-					<strong>계량 꿀팁!</strong></h2>
-					<p>밥숟가락, 종이컵으로 <br>
-					간단하고 쉽게 알려드립니다. </p>
-				</a>
-			</div>
+            <a class="sec04_tip_a" href="../category/tip.asp">
+               <h2>오뚜기의<br>
+               쉽고 간단한<br>
+               <strong>계량 꿀팁!</strong></h2>
+               <p>밥숟가락, 종이컵으로 <br>
+               간단하고 쉽게 알려드립니다. </p>
+            </a>
+         </div>
     <!-- 메인3-3 -- 꿀팁 소개 부분 -->
-				
-						
+            
+                  
 
 
   </div>
@@ -100,18 +102,27 @@
 
 
 <style scoped>
-/* 전체적용 css */
+/* main-1 */
+/* #mainslider{
+  text-align: center;
+  align-items: center;
+} */
+
+/* main-3 전체적용 css */
 .content {
 
   /* position: relative; */
   /* width: 1280px; */
+
   margin: 0 auto;
-  vertical-align: top;
-  display: flex;
+  /* vertical-align: top; */
+  /* display: flex; */
+  
   /* align-items: center; */
   /* flex-flow: row nowrap;
   justify-content: center; */
-  clear: both;
+
+  /* clear: both; */
 }
 
 /* div {
@@ -124,8 +135,9 @@
 /* 꿀팁 소개 부분 css (오키친) */
 .sec04_tip{
   background-color: rgb(255, 237, 147);
-  padding: 50px 40px;
-  margin: auto;
+  /* padding: 50px 40px; */
+  /* margin: auto; */
+  align-items: center;
 }
 /* .section01 .sec04_tip a {
     padding: 40px 30px;
@@ -163,7 +175,7 @@
   display: table;
 }  */
 
-.sec01_tag_h2 {
+.sec01_tag h2 {
   font-size: 40px;
   color: #333;
   /* line-height: 1.1; */
@@ -192,9 +204,9 @@ a {
   text-decoration: none;
   color: #777;
 }
-.section01 .sec01_tag .Tag {
+.Tag {
   text-align: left;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 
