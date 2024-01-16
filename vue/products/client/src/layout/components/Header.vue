@@ -1,56 +1,50 @@
 <template>
   <header class="Topclass">
     <div class="topmenu">
-        <div class="contentbox">
-            <div class="logo">
-            <button v-on:click="goToPage('/main')">Recipan</button>
-            </div>
-
-            <nav class="header__menu">
-            <ul>
-                <li class="active" v-on:click="goToPage('/main')"><a href="/">홈</a></li>
-                <li class="active" v-on:click="goToPage('/recipe')">레시피</li>
-                <!-- <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">홈</a></li>
-                                    <li><a href="./shoping-cart.html">레시피</a></li>
-                                    <li><a href="./checkout.html">게시판</a></li>
-                                    <li><a href="./blog-details.html">팁</a></li>
-                                </ul>
-                </li>-->
-                <li class="active" v-on:click="goToPage('/board')">게시판</li>
-                <li class="active" v-on:click="goToPage('/tip')">TIP</li>
-            </ul>
-            </nav>
-            <!-- <div id="mobile-menu-wrap"></div> -->
-            <div class="system">
-            <button class="login" v-on:click="goToPage('/login')">로그인</button>
-            <button class="member" v-on:click="goToPage('/SingUp')">회원가입</button>
-            </div>
+      <div class="contentbox">
+        <div class="logo">
+          <button v-on:click="goToPage('/main')">Recipan</button>
         </div>
-        <div class="hero__search">
-          <div class="hero__search__form">
-            <form action="#" class="searchform">
-              <div class="hero__search__categories">
-                All Categories
-                <span class="arrow_carrot-down"></span>
-              </div>
-              <input type="text" placeholder="What do yo u need?" />
-              <button type="submit" class="site-btn">SEARCH</button>
-            </form>
-          </div>
+
+        <nav class="header__menu">
+          <ul>
+            <li><a href="/" class="headermenu">홈</a>
+            </li>
+            <li><a href="/RecipeBoard" class="headermenu">레시피</a></li>
+            <li><a href="/FboardList" class="headermenu">게시판</a></li>
+            <li><a href="/TipBoard" class="headermenu">Tip</a></li>
+          </ul>
+        </nav>
+        <!-- <div id="mobile-menu-wrap"></div> -->
+        <div class="system">
+          <button class="login"><a herf="/login" class="loginmenu" >로그인</a></button>
+          <button class="member"><a herf="/IdPw" class="membermenu">회원가입</a></button>
         </div>
       </div>
-
-
+      <div class="hero__search">
+        <div class="hero__search__form">
+          <form action="#" class="searchform">
+            <div class="hero__search__categories">
+              All Categories
+              <span class="arrow_carrot-down"></span>
+            </div>
+            <input type="text" placeholder="What do yo u need?" />
+            <button type="submit" class="site-btn">SEARCH</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 <script></script>
 
 <style scoped>
-
-
 /************************button*************************/
+header{
+  height: 230px;
+  /* position: fixed; */
+}
+
 /* 버튼모양 */
 button {
   font-family: "NotoL", "Malgun Gothic", "맑은고딕", "돋움", dotum, sans-serif;
@@ -74,28 +68,49 @@ button {
 
 .topmenu .contentbox {
   display: flex;
-  justify-content: space-between;
-  /* justify-content : center; */
+  /* justify-content: space-between; */
+  justify-content : center;
   align-items: center;
   padding: 5px;
 }
 
 /* 메뉴바 */
-.active {
+.headermenu{
   /* background-color: rgb(134, 245, 100); */
   padding: 30px;
-  margin: 30px;
+  margin: 0px 30px;
   border-radius: 80px;
   border-style: none;
   font-weight: bold;
-  font-size: 20px;
+  /* font-size: 30px; */
+  text-decoration-line: none;
+  list-style: none;
+  color: black;
+  /* color: #7fad39; */
 }
 
 /* 메뉴바 마우스오버 */
-.active:hover {
+.headermenu:hover {
   border-color: rgb(134, 245, 100);
   background-color: rgb(152, 226, 129);
 }
+
+
+.loginmenu .membermenu{
+  /* background-color: rgb(134, 245, 100); */
+  padding: 30px;
+  margin: 0px 30px;
+  border-radius: 80px;
+  border-style: none;
+  font-weight: bold;
+  /* font-size: 30px; */
+  text-decoration-line: none;
+  list-style: none;
+  color: black;
+  /* color: #7fad39; */
+}
+
+
 
 /* 로그인글씨부분 */
 .system > button::before {
@@ -124,7 +139,7 @@ nav ul {
   margin: 0 auto;
   border: 1px solid #ebebeb;
   position: relative;
-  /* float: left; */
+  float: center;
 }
 
 /* 검색바 */
@@ -134,11 +149,11 @@ nav ul {
   font-size: 16px;
   color: #1c1c1c;
   font-weight: 700;
-  /* padding-left: 18px; */
+  padding-left: 18px;
   text-align: center;
   padding-top: 11px;
   position: relative;
-  /* font-weight: bold; */
+  font-weight: bold;
 }
 
 .hero__search__form form .hero__search__categories:after {
@@ -147,13 +162,40 @@ nav ul {
   top: 14px;
   height: 20px;
   width: 1px;
-  background: #000000;
   opacity: 0.1;
   content: "";
 }
+.hero__search__form form .hero__search__categories span {
+	position: absolute;
+	right: 14px;
+	top: 14px;
+}
+.hero__search__form form input {
+	width: 70%;
+	border: none;
+	height: 48px;
+	font-size: 16px;
+	color: #b2b2b2;
+	padding-left: 20px;
+}
+.hero__search__form form input::placeholder {
+	color: #b2b2b2;
+}
+
+.hero__search__form form button {
+	position: absolute;
+	right: 0;
+	top: -1px;
+  font-size: 16px;
+	height: 50px;
+  padding: 0 100px;
+  color: white;
+  background-color: #7fad39;
+}
+
 
 /*************************오가닉 header*************************/
-/* .header__menu {
+.header__menu {
   padding: 24px 0;
 }
 
@@ -171,7 +213,7 @@ nav ul {
   background: #222222;
   width: 180px;
   z-index: 9;
-  padding: 5px 0;
+  /* padding: 30px; */
   -webkit-transition: all, 0.3s;
   -moz-transition: all, 0.3s;
   -ms-transition: all, 0.3s;
@@ -186,39 +228,39 @@ nav ul {
   display: block;
 }
 
-.header__menu ul li .header__menu__dropdown li:hover > a {
+/* .header__menu ul li .header__menu__dropdown li:hover > a {
   color: #7fad39;
-}
+} */
 
-.header__menu ul li .header__menu__dropdown li a {
+/* .header__menu ul li .header__menu__dropdown li a {
   text-transform: capitalize;
   color: #ffffff;
   font-weight: 400;
   padding: 5px 15px;
-}
+} */
 
-.header__menu ul li.active a {
+/* .header__menu ul li.active a {
   color: #7fad39;
-}
+} */
 
-.header__menu ul li:hover .header__menu__dropdown {
+/* .header__menu ul li:hover .header__menu__dropdown {
   top: 30px;
   opacity: 1;
   visibility: visible;
-}
+} */
 
-.header__menu ul li:hover > a {
+/* .header__menu ul li:hover > a {
   color: #7fad39;
-}
+} */
 
 .header__menu ul li:last-child {
   margin-right: 0;
 }
 
 .header__menu ul li a {
-  font-size: 14px;
+  font-size: 20px;
   color: #252525;
-  text-transform: uppercase;
+  text-transform: uppercase; 
   font-weight: 700;
   letter-spacing: 2px;
   -webkit-transition: all, 0.3s;
@@ -226,8 +268,8 @@ nav ul {
   -ms-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   transition: all, 0.3s;
-  padding: 5px 0;
+  /* padding: 30px; */
   display: block;
-} */
+}
 /*************************오가닉 header*************************/
 </style>
