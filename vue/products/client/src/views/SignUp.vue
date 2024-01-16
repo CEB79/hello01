@@ -31,7 +31,7 @@
           <div class="col-lg-6">
             <div class="checkout__input">
               <p>비밀번호<span>*</span></p>
-              <input name="pw" type="password" class="signup_pw" />
+              <input name="pw" type="password" class="signup_pw" placeholder="8자리 이상 입력 하시오"/>
             </div>
             <div class="checkout__input">
               <p>비밀번호 확인<span>*</span></p>
@@ -66,13 +66,6 @@
             </button>
           </div>
         </div>
-        <!-- <div class="checkout__input">
-                            <p>주소<span>*</span></p>
-                            <input type="text" name="zipcode" placeholder="우편번호" id="zip_code" disabled>
-                            <button type="button" id="btn_zip_code" onclick="zipCodeSearch()">우편번호 검색</button><br>
-                            <input type="text" name="adress" placeholder="주소" class="checkout__input_add" id="adress_input" disabled><br>
-                            <input type="text" name="adress_Details" placeholder="상세주소" class="checkout__input_add" id="adress_input_details">
-                        </div> -->
       </div>
     </div>
   </div>
@@ -80,45 +73,54 @@
 <script>
 export default {
     methods: {
-    
-        signUpButton(value) {
+        signUpButton(){
+          let testid = document.getElementsByClassName("testid");
+          // console.log(testid);
+          if (testid[0].value == ""){
+            alert("아이디를 입력해주세요")
+          } else{
+            this.pwCheck();
+        }
+      },
+        pwCheck() {
         let pw = document.getElementsByClassName("signup_pw");
         let pw_check = document.getElementsByClassName("signup_pw_check");
-        
         if (pw[0].value == pw_check[0].value && pw[0].value.length >= 8) {
             this.phonCheck()
         } else if (pw[0].value.length <= 8 || pw_check[0].value.length <= 8) {
         alert("8자리 이상 입력하세요");
         } else if (pw[0].value !== pw_check[0].value) {
         alert("비밀번호가 일치하지 않습니다.");
-    }   return value.length >=4 && value.length <= 12;
+    }   return 
   },
         phonCheck(){
             let Pdata= document.getElementsByClassName("PhonData");
-            // console.log(Pdata[0])
-            // return/^[0-9][0-9]*$/.
-        if(Pdata[0].value.length == 13 || Pdata[0].value.length == 12){
+            // console.log(Pdata[0].value)
+            if (Pdata[0].value == ""){
+              alert("전화번호를 입력해주세요")
+            }else if(11<= Pdata[0].value.length <= 13){
             this.emailCheck()
-            
-        }
+            }else {alert("형식에 같게 작성해주세요")}
+          },
+          emailCheck(){
+              let Edata = document.getElementsByClassName('EmailData');
+              if(Edata[0].value == ""){
+              alert("Email을 입력해 주세요");
+            }else{
+                alert("가입 완료");
+                location.href="main";
+              }
+          }
     },
-        emailCheck(){
-            let Edata = document.getElementsByClassName('EmailData');
-            console.log(Edata[0].value)
-            alert("가입 완료");
-            
-            
-
-        }
     
     
 
 }
-}
+
 </script>
 <style>
 .body {
-  margin: 0 0;
+  margin: 0 20%;
   padding: 10% 10%;
 }
 
