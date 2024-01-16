@@ -282,7 +282,7 @@
               당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의
               경우에는 민사소송법상의 관할법원에 제기합니다. ② “몰”과 이용자
               간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
-            </p>
+            </p>col-3
           </div>
           <div class="checkout__input__checkbox">
             <label for="acc-or">
@@ -470,12 +470,12 @@
           <div class="checkout__input__checkbox">
             <label for="payment">
               <span>개인정보 수집및 이용 약관에 동의 하시겠습니까?</span>
-              <input type="checkbox" class="acc-or" checked/>
+              <input type="checkbox" class="acc-or"/>
               <span class="checkmark"></span>
             </label>
           </div>
           <div class="btnwrap">
-            <b-button variant="join" @click="NextPage()">회원가입</b-button>
+            <button class="joinbtn" variant="join" @click="NextPage()">회원가입</button>
           </div>
         </div>
       </div>
@@ -498,7 +498,10 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
+.btn{
+
+}
 .body {
   margin: 0 0;
   padding: 10% 10%;
@@ -527,8 +530,17 @@ export default {
   margin: 0px 3px;
   margin-bottom: 2px;
 }
-.btnwrap {
+
+.joinbtn{
   width: 90%;
-  margin: 30px auto;
+  margin: 0px auto;
+  height: 50px;
+  border: solid 1px black;
+  border-radius: 20px;
+  background-color: rgb(248, 241, 233);
+  color: #000;
+  font-size: 1rem;
+  text-align: center;
+  padding: 5px 0px;
 }
 </style>
