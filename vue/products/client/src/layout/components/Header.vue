@@ -17,8 +17,8 @@
         </nav>
         <!-- <div id="mobile-menu-wrap"></div> -->
         <div class="system">
-          <button class="login"><a herf="/login" class="loginmenu" >로그인</a></button>
-          <button class="member"><a herf="/IdPw" class="membermenu">회원가입</a></button>
+          <button type="button" class="loginmenu" onclick="location.href='/login'">로그인</button>
+          <button type="button" class="membermenu" onclick="location.href='/SignUp'">회원가입</button>
         </div>
       </div>
       <div class="hero__search">
@@ -97,17 +97,15 @@ button {
 
 
 .loginmenu .membermenu{
-  /* background-color: rgb(134, 245, 100); */
-  padding: 30px;
-  margin: 0px 30px;
-  border-radius: 80px;
-  border-style: none;
-  font-weight: bold;
-  /* font-size: 30px; */
-  text-decoration-line: none;
-  list-style: none;
-  color: black;
-  /* color: #7fad39; */
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  margin: 0 4px;
+  background-color: #ddd;
+  vertical-align: middle;
+
 }
 
 
