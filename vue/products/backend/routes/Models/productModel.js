@@ -1,17 +1,31 @@
 // // import connection
-// import db from "../../config/database.js";
+import db from "../../config/database.js";
  
-// // Get All Products
-// export const getProducts = (result) => {
-//     db.query("SELECT * FROM user", (err, results) => {             
-//         if(err) {
-//             console.log(err);
-//             result(err, null);
-//         } else {
-//             result(null, results);
-//         }
-//     });   
-// }
+// Get All Products
+export const getUser = (result) => {
+    db.query("SELECT * FROM user", (err, results) => {             
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });   
+}
+
+
+// Insert Product to Database
+export const insertUser = (data, result) => {
+    db.query("INSERT INTO user SET ?", [data], (err, results) => {             
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });   
+};
+
  
 // // // Get Single Product
 // // export const getProductById = (id, result) => {
@@ -25,17 +39,7 @@
 // //     });   
 // // }
  
-// // // Insert Product to Database
-// // export const insertProduct = (data, result) => {
-// //     db.query("INSERT INTO product SET ?", [data], (err, results) => {             
-// //         if(err) {
-// //             console.log(err);
-// //             result(err, null);
-// //         } else {
-// //             result(null, results);
-// //         }
-// //     });   
-// // }
+
  
 // // // Update Product to Database
 // // export const updateProductById = (data, id, result) => {
