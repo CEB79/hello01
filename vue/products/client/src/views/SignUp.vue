@@ -8,7 +8,7 @@
           <div class="col-lg-7">
             <div class="checkout__input" id="sign_up_name">
               <p>이름<span>*</span></p>
-              <input name="username" type="text" id="signUserName" /><br />
+              <input name="username" type="text" id="signUserName"  v-model="userName"/><br />
             </div>
           </div>
 
@@ -22,16 +22,16 @@
           <div>
             <div class="checkout__input" id="sign_up_id">
               <p>아이디<span>*</span></p>
-              <input name="id" type="text" class="testid" />
+              <input name="id" type="text" class="testid" v-model="userId"/>
               <button type="button" class="testbtn" onclick="userIdMatch()">
                 중복 확인
               </button>
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="checkout__input">
+            <div class="checkout__input" >
               <p>비밀번호<span>*</span></p>
-              <input name="pw" type="password" class="signup_pw" placeholder="8자리 이상 입력 하시오"/>
+              <input name="pw" type="password" class="signup_pw" placeholder="8자리 이상 입력 하시오" v-model="userPw"/>
             </div>
             <div class="checkout__input">
               <p>비밀번호 확인<span>*</span></p>
@@ -46,6 +46,7 @@
                 class="input_plus PhonData"
                 name="phone"
                 placeholder="예) 010-0000-0000"
+                v-model="userPhon"
               />
             </div>
           </div>
@@ -57,11 +58,13 @@
                 class="input_plus EmailData"
                 name="email"
                 placeholder="예)email@email.com"
+                v-model="userEmail"
               />
             </div>
           </div>
+          
           <div>
-            <button type="button" id="sign_up_btn" @click="signUpButton">
+            <button type="button" id="sign_up_btn" @click="createUser">
               회 원 가 입
             </button>
           </div>
@@ -71,8 +74,42 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
+
+  name: "addUser",
+  data(){
+    return{
+      userName:"",
+      userId:"",
+      userPw:"",
+      userPhon:"",
+      userEmail:""
+    };
+  },
     methods: {
+      async createUser() {
+      try {
+        await axios.post("http://localhost:5000/user", {
+          UserNa: this.userName,
+          UserId: this.userId,
+          UserPassword: this.userPw,
+          UserPhon: this.userPhon,
+          UserEmail: this.userEmail,
+        });
+        this.userName = "";
+        this.userId = "";
+        this.userPw = "";
+        this.userPhon = "";
+        this.userEmail = "";
+        this.$router.push("/");
+        console.log("성공");
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
+
         signUpButton(){
           let testid = document.getElementsByClassName("testid");
           // console.log(testid);
@@ -107,6 +144,7 @@ export default {
               if(Edata[0].value == ""){
               alert("Email을 입력해 주세요");
             }else{
+                this.createUser();
                 alert("가입 완료");
                 location.href="main";
               }

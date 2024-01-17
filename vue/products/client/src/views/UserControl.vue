@@ -16,7 +16,7 @@
         </div>
         <hr>
         <div>
-          <table >
+          <table class="controlTable">
             <thead>
               <tr>
                 <th>회원번호</th>
@@ -27,11 +27,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>0</td>
-                <td>admin</td>
-                <td>admin</td>
-                <td>관리자</td>
+              <tr v-for="item in items" :key="item.UserId">
+                <td>{{ item.UserNo }}</td>
+                <td>{{ item.UserId }}</td>
+                <td>{{ item.UserNa }}</td>
+                <td>{{ item.admin }}</td>
                 <td><button class="secession_btn">탈퇴</button></td>
               </tr>
 
@@ -44,11 +44,46 @@
 </template>
 
 <script>
+import axios from "axios";
+
+export default {
+  name: "UserControl",
+  data() {
+    return {
+      items: [],
+    };
+  },
+
+  created() {
+    this.showUser();
+  },
+
+  methods: {
+    // Get All Products
+    async showUser() {
+      try {
+        const response = await axios.get("http://localhost:5000/user");
+        this.items = response.data;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  }
 
 
+}
 </script>
 
 <style scoped>
+td{
+  color:black;
+}
+.body{
+    margin: 0 0;
+    padding:  10% 20%;
+    
+    
+}
 .userSerch_form {
   font-size: 20px;
 }
@@ -89,5 +124,10 @@ td {
   padding: 0 5px;
   border: solid 1px;
   border-radius: 5px;
+}
+
+.controlTable{
+  width: 100%;
+  color: black;
 }
 </style>
