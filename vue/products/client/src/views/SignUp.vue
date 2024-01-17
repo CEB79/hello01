@@ -97,6 +97,7 @@ export default {
           UserPhon: this.userPhon,
           UserEmail: this.userEmail,
         });
+        console.log(this.userName[0].value)
         this.userName = "";
         this.userId = "";
         this.userPw = "";
@@ -106,6 +107,7 @@ export default {
         console.log("성공");
       } catch (err) {
         console.log(err);
+        console.log("실패");
       }
     },
 

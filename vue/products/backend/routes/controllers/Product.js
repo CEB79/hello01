@@ -1,44 +1,41 @@
-import db from "../../config/database.js";
-
+import {getUser, insertUser} from "../Models/productModel.js"
 // Show User
 export const showUser = (req, res) => {
-    db.query("SELECT * FROM user", (err, results) => {             
+    getUser((err, results) => {             
         if(err) {
-            console.log(err);
-            res.send(err);
-           // result(err, null);
-        } else {
-            console.log(results);
-            res.json(results);
-
-            //result(null, results);
-        }
-    });   
-}
-
-// Delete User
-export const deleteUser = (req, res) => {
-    db.query("DELETE FROM user WHERE UserNo = ?", [id], (err, results) => {             
-        if(err) {
-            console.log(err);
             res.send(err);
         } else {
-            console.log(results);
             res.json(results);
         }
     });   
 }
 
-// Create New User
 export const createUser = (req, res) => {
-    db.query("INSERT INTO product SET ?", [data], (err, results) => {             
-        if(err) {
+    const data = req.body;
+    insertUser(data, (err, results) => {
+        if (err){
             res.send(err);
-        } else {
+        }else{
             res.json(results);
         }
     });
-} 
+}
+
+// Delete User
+// export const deleteUser = (req, res) => {
+//     db.query("DELETE FROM user WHERE UserNo = ?", [id], (err, results) => {             
+//         if(err) {
+//             console.log(err);
+//             res.send(err);
+//         } else {
+//             console.log(results);
+//             res.json(results);
+//         }
+//     });   
+// }
+
+// Create New User
+
 // // Get Single Product 
 // export const showProductById = (req, res) => {
 //     getProductById(req.params.id, (err, results) => {
