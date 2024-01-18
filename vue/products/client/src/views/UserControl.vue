@@ -32,7 +32,8 @@
                 <td>{{ item.UserId }}</td>
                 <td>{{ item.UserNa }}</td>
                 <td>{{ item.admin }}</td>
-                <td><button class="secession_btn">탈퇴</button></td>
+                <td><button 
+                  class="secession_btn" @click="deleteUser(item.UserNo)">탈퇴</button></td>
               </tr>
 
             </tbody>
@@ -45,7 +46,6 @@
 
 <script>
 import axios from "axios";
-
 export default {
   name: "UserControl",
   data() {
@@ -57,7 +57,9 @@ export default {
   created() {
     this.showUser();
   },
-
+  // created2: function(){
+  //     this.getUserById();
+  //   },
   methods: {
     // Get All Products
     async showUser() {
@@ -68,9 +70,31 @@ export default {
         console.log(err);
       }
     },
-  }
 
+    async getUserById() {
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/products/${this.$route.params.id}`
+        );
+        this.userName = response.data.userName,
+        this.userId = response.data.userId,
+        this.userPw = response.data.userPw,
+        this.userPhon = response.data.userPhon,
+        this.userEmail = response.data.userEmail
+      } catch (err) {
+        console.log(err);
+      }
+    },
 
+    async deleteUser(id){
+      try{
+        await axios.delete(`http://localhost:5000/user/${id}`);
+        this.showUser();
+      }catch(err){
+        console.log(err);
+      }
+    },
+  },
 }
 </script>
 

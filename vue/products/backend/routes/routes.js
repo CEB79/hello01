@@ -2,25 +2,30 @@
 import express from "express";
  
 // import function from controller
-import {createUser, showUser } from "./controllers/Product.js";
+import {checkLogin, checkUserById, createUser, deleteUser, showUser} from "./controllers/User.js";
  
 // init express router
 const router = express.Router();
  
-// Get All Product
+// Get All User
 router.get('/user', showUser);
  
-// // Get Single Product
-// router.get('/products/:id', showProductById);
+// Get Single User
+router.get('/user/:id', checkUserById);
  
 // // Create New Product
-// router.post('/products', createProduct);
+
+// router.post('/user', createUser);
 router.post('/user', createUser);
+
 // // Update Product
-// router.put('/products/:id', updateProduct);
  
-// // Delete Product
-// router.delete('/products/:id', deleteProduct);
+// Delete Product
+router.delete('/user/:id', deleteUser);
  
+
+router.post('/login', checkLogin);
+
+
 // export default router
 export default router;

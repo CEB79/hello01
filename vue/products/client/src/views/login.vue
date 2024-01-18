@@ -8,9 +8,9 @@
                 </div>
                 <div class="loginform">
                     <label for="id"><i class="bi bi-file-person" />ID</label>
-                    <b-form-input id="id" placeholder=" 아이디를 입력해 주세요" />
+                    <b-form-input id="id" placeholder=" 아이디를 입력해 주세요" v-model="userId"/>
                     <label for="pass"><i class="bi bi-lock" />PW</label>
-                    <b-form-input type="password" id="pass" placeholder=" 비밀번호를 입력해 주세요" />
+                    <b-form-input type="password" id="pass" placeholder=" 비밀번호를 입력해 주세요" v-model="userPw"/>
                 </div>
                 <div class="checkForm" >
                     <input type="checkbox" name="IdSave" class="IdSave"> ID 저장
@@ -20,7 +20,7 @@
                     
                 </div>
                 <div class="btnwrap">
-                    <button class="loginbtn">로그인</button><br>
+                    <button class="loginbtn" @click="checkLogin">로그인</button><br>
                     <a href="SignChack"><button class="loginbtn">회원가입</button></a>
                 </div>
         </div>
@@ -28,13 +28,98 @@
     </div>
 </template>
 <script>
+import axios from "axios";
+
 export default{
+    name: "checkUser",
+    
     data(){
         return{
-            
+        userId: "",
+        userPw : ""
+        };
+    },
+
+    created() {
+    this.checkLogin();
+
+    },
+
+    methods: {
+    // Get All Products
+    async checkLogin() {
+        
+        if(this.userId == '') {
+            alert('아이디를 입력해주세요.');
+            return;
+        }if(this.userPw == ''){
+            alert('비밀번호를 입력해주세요');
+            return;
         }
-    }
+        try {
+            await axios.post("http://localhost:5000/login", {
+                UserId: this.userId,
+                UserPassword: this.userPw
+            }).then(function(res){
+                console.log(res.data[0].UserPassword);
+                // if(res.data[0].UserPassword == this.userPw){
+
+                // }
+            }).catch(function(res){
+                console.log(res);
+            });
+            // console.log(this.userId[0].value)
+            this.userId = "";
+            this.userPw= "";
+            this.$router.push("/");
+            // console.log("성공");
+            // return;
+        } catch (err) {
+            console.log(err);
+            // console.log("실패");
+        }
+        },  
+       
+       
+        // Get All Products
+        async showUser() {
+        try {
+            const response = await axios.get("http://localhost:5000/user");
+            this.items = response.data;
+        } catch (err) {
+            console.log(err);
+        }
+        },
+        }
+    // methods : {
+    //     login : function(){
+    //         if(this.user.id == '') {
+    //             alert('아이디를 입력해주세요.');
+    //             return;
+    //         }
+    //         if(this.user.password){
+    //             alert('비밀번호를 입력해주세요');
+    //             return;
+    //         }
+    //         .post('/api/login', {user:this.user}.then((response) =>{
+    //             if (response.data.success == true) {
+    //                     alert(response.data.message);
+    //                     this.$router.push('/list');
+    //                 } else {
+    //                     alert(response.data.message);
+    //                 }
+    //         })) 
+    //     },
+
+    
+
+
+
+
 }
+
+
+
 </script>
 <style>
 .body{
