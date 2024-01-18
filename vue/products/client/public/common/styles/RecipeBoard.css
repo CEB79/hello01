@@ -92,3 +92,12 @@
     -o-transition: all, 0.3s;
     transition: all, 0.3s;
 }
+
+#write {
+    float: right;
+}
+
+.write_a {
+    text-decoration-line: none;
+    color: black;
+}
