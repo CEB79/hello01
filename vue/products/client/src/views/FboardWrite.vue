@@ -1,89 +1,60 @@
 <template>
   <!-- <Subpage :pagetit="'자유 소통 게시판'"> -->
-
-  <div>
-    <div id=boardName>
-      <h1>자유 게시판</h1>
-      <h4>회원끼리 자유롭게 소통하는 게시판입니다.</h4>
+  <section class="fboardWrite">
+    <br /><br /><br /><br />
+    <br /><br /><br /><br />
+    <div id="fboardName">
+      <span><h1>자유 게시판</h1></span>
+      <span><h4>회원끼리 자유롭게 소통하는 게시판입니다.</h4></span>
     </div>
-    <div>
-      <b-form-group
-        id="title"
-        placeholder="제목을 입력하세요"
-        label="제목"
-        label-for="titleName"
-      >
-        <b-form-input id="inputTitle" v-model="name" :state="state" trim>
-        </b-form-input>
-      </b-form-group>
-      <b-form-group>
-     
-      </b-form-group>
 
-      <b-form-group id="content" description="" label="내용" label-for=" ">
-        <b-form-textarea
-          id="textarea-rows"
-          v-model="text"
-          rows="10"
-          placeholder="내용을 입력하세요"
-        >
-        </b-form-textarea>
-        
-      </b-form-group>
-      <div>
-        <b-button class="btn1" type="submit" size="sm" variant="outline-primary"
-          >확인</b-button>
-        <b-button class="btn1" type="reset" size="sm" variant="outline-secondary"
-          >취소</b-button>
+    <div id="fbTitle">
+      <span style="color: black">제목 </span>
+      <input type="text" />
+    </div>
+    <div id="fbWrite">
+      <span style="color: black">내용</span>
+      <textarea
+        id="fboardWrite"
+        placeholder="내용을 입력하세요."
+        cols="50"
+        align="center"
+      ></textarea>
+
+      <div class="fbBtn"  style="align:right; margin-top: 10px;" >
+        <input type="button" value="등록하기" />
+        <input type="button" value="취소" />
       </div>
     </div>
-  </div>
-  <!-- </div> -->
-  <!-- </Subpage> -->
+  </section>
 </template>
 
-<script>
-// import Subpage from "@/layout/components/Subpage.vue";
-// export default {
-// components: { Subpage },
-// data(){
-//     return{
-//       form:{
-//         bookname:"",
-//         companyname:"",
-//         class:"",
-//         name:"",
-//         phonenum:'',
-//         email:'',
-//         memo:'',
-//         checkedtype:[]
-//       },
-//     }
-//   },
-//   methods:{
-//     ClassCall(event){
-//         event.preventDefault()
-//         alert(JSON.stringify(this.form))
-//         this.$nextTick(() => {
-//             this.form.bookname = ''
-//             this.form.companyname = ''
-//             this.form.class = ''
-//             this.form.name = ''
-//             this.form.phonenum = ''
-//             this.form.email = ''
-//             this.form.memo = ''
-//             this.form.checkedtype = []
-//         })
-// 	},
-//   }
-// };
-</script>
-
 <style>
-.boardName{
-align-content: center;
+h1,
+h4 {
+  margin-left: 80px;
 }
 
+#fbWrite {
+  vertical-align: top;
+}
 
+#fboardName,
+#fbWrite, #fbTitle {
+  margin: 0 auto; /* 수평 가운데 정렬 */
+  width: 80%;
+}
 
+#fbTitle input,
+#fbWrite textarea {
+  width: 100%; /* input과 textarea의 너비를 100%로 설정 */
+}
+
+#fbWrite textarea {
+  height: 500px;  
+}
+
+.fbBtn{
+  align-content: right;
+}
 </style>
