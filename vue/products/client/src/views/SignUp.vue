@@ -23,7 +23,7 @@
             <div class="checkout__input" id="sign_up_id">
               <p>아이디<span>*</span></p>
               <input name="id" type="text" class="testid" v-model="userId"/>
-              <button type="button" class="testbtn" onclick="userIdMatch()">
+              <button type="button" class="testbtn" @click="checkUserId(userId)">
                 중복 확인
               </button>
             </div>
@@ -64,7 +64,7 @@
           </div>
           
           <div>
-            <button type="button" id="sign_up_btn" @click="createUser">
+            <button type="button" id="sign_up_btn" @click="signUpButton">
               회 원 가 입
             </button>
           </div>
@@ -75,6 +75,7 @@
 </template>
 <script>
 import axios from "axios";
+
 export default {
 
   name: "addUser",
@@ -87,7 +88,19 @@ export default {
       userEmail:""
     };
   },
+  
+  created() {
+    this.checkUserId();
+    
+  },
+
     methods: {
+
+      me:function(){
+        alert("Hi")
+      },
+
+
       async createUser() {
       try {
         await axios.post("http://localhost:5000/user", {
@@ -110,6 +123,15 @@ export default {
         console.log("실패");
       }
     },
+    async checkUserId(id){
+      try{
+        console.log(id);
+        await axios.get(`http://localhost:5000/user/${id}`);
+      }catch(err){
+        console.log(err);
+      }
+    },
+  
 
 
         signUpButton(){
@@ -148,7 +170,6 @@ export default {
             }else{
                 this.createUser();
                 alert("가입 완료");
-                location.href="main";
               }
           }
     },
