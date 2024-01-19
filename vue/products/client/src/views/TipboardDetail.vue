@@ -1,33 +1,28 @@
 <template>
-<header>
-
-
-</header>
-
-<body>
-    
+  <body>
     <section>
-        <div>
+      <div class="tipDT">
+        <h5>Small image with <code>fluid</code>:</h5>
+        <b-img
+          src="https://picsum.photos/300/150/?image=41"
+          fluid
+          alt="Fluid image"
+        ></b-img>
 
-
-        </div>
-
-
-
+        <h5 class="my-3">Small image with <code>fluid-grow</code>:</h5>
+        <b-img
+          src="https://picsum.photos/300/150/?image=41"
+          fluid-grow
+          alt="Fluid-grow image"
+        ></b-img>
+      </div>
     </section>
-
-</body>
-
-<footer>
-
-    
-</footer>
-
-
+  </body>
 </template>
 
 <style scoped>
-
+.tipDT{
+display:flex;
+}
 
 </style>
-
