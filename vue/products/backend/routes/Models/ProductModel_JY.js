@@ -3,8 +3,10 @@ import db from "../../config/database.js";
 //mypage 회원번호, 이름, 전화번호 부분//
 export const mypageInfo = (UserNo, result) => {
     // console.log(UserNo);
-    db.query("SELECT User.UserNo, user.UserNa, user.UserPhon FROM mypage INNER JOIN user ON mypage.FK__user=user.UserNo WHERE mypage.FK__user=?", [UserNo], (err, results) => {
-        if(err) {
+    db.query("SELECT User.UserNo, user.UserNa, user.UserPhon " +
+        "FROM mypage INNER JOIN user ON mypage.FK__user=user.UserNo " +
+        "WHERE mypage.FK__user=?", [UserNo], (err, results) => {
+        if (err) {
             console.log(err);
             result(err, null);
         } else {

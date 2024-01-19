@@ -14,13 +14,9 @@ import RecipeDetails from "../views/RecipeDetails.vue";
 import RecipeRegister from "../views/RecipeRegister.vue";
 import Mypage from "../views/Mypage.vue";
 import TipBoard from "../views/TipBoard.vue";
-import TipBoardDetail from "../views/TipBoardDetail.vue";
+import TipboardDetail from "../views/TipboardDetail.vue";
 import FboardList from "../views/FboardList.vue";
 import FboardWrite from "../views/FboardWrite.vue";
-
-
-
-
 
 
 const routes = [
@@ -92,9 +88,9 @@ const routes = [
         component: TipBoard,
     },
     {
-        path: "/TipBoardDetail",
-        name: "TipBoardDetail",
-        component: TipBoardDetail,
+        path: "/TipboardDetail",
+        name: "TipboardDetail",
+        component: TipboardDetail,
     }
     
 ]
