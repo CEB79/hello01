@@ -23,6 +23,8 @@
       rows="8"
     ></b-form-textarea>
   </div>
+    <b-button variant="info" type=submit>등록</b-button>
+     <b-button variant="outline-secondary">취소</b-button>
 </div>
 
 

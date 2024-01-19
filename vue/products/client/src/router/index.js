@@ -13,6 +13,15 @@ import RecipeBoard from '../views/RecipeBoard.vue'
 import RecipeDetails from "../views/RecipeDetails.vue";
 import RecipeRegister from "../views/RecipeRegister.vue";
 import Mypage from "../views/Mypage.vue";
+import TipBoard from "../views/TipBoard.vue";
+import TipBoardDetail from "../views/TipBoardDetail.vue";
+import FboardList from "../views/FboardList.vue";
+import FboardWrite from "../views/FboardWrite.vue";
+
+
+
+
+
 
 const routes = [
     {
@@ -70,17 +79,22 @@ const routes = [
     {
         path: "/FboardWrite",
         name: "FboardWrite",
-        component: () => import("@/views/FboardWrite.vue"),  
+        component: FboardWrite 
     },
     {
         path: "/FboardList",
         name: "FboardList",
-        component: () => import("@/views/FboardList.vue"),
+        component: FboardList,
     },
     {
         path: "/TipBoard",
         name: "TipBoard",
-        component: () => import("@/views/TipBoard.vue"),
+        component: TipBoard,
+    },
+    {
+        path: "/TipBoardDetail",
+        name: "TipBoardDetail",
+        component: TipBoardDetail,
     }
     
 ]
