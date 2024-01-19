@@ -13,18 +13,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in items" :key="item.UserId">
-          <!-- <tr v-if="item in items" :key="item.UserId"> -->
-            <!-- <td>1001</td>
-            <td>김00</td>
-            <td>010-1234-1234</td>
-            <td class="actcss">10건</td>
-            <td class="actcss">1건</td> -->
-            <td>{{ item.UserNo }}</td>
-            <td>{{ item.UserNa }}</td>
-            <td>{{ item.UserPhon }}</td>
-            <!-- <td class="actcss">{{ COUNT(mypage.FK__fboard) }}건</td>
-            <td class="actcss">{{ COUNT(board.User_userId) }}건</td> -->
+          <tr>
+            <td>{{ items.UserNo }}</td>
+            <td>{{ items.UserNa }}</td>
+            <td>{{ items.UserPhon }}</td>
+            <td class="actcss">{{ items.FK__fboard }}건</td>
+            <td class="actcss">{{ items.User_userId }}건</td>
           </tr>
         </tbody>
       </table>
@@ -105,6 +99,7 @@ export default {
       // console.log(items="")
       try {
           const response = await axios.post("http://localhost:5000/showmypage",{UserNo:2}); //나중에 로컬스토리지 에서 받은 것으로 변경하기
+          console.log(response);
           this.items = response.data;
       } catch (err) {
         console.log(err);
