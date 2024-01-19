@@ -212,6 +212,10 @@ h1 {
   color: black;
   padding: 10px;
 }
+/* .card-body.h4 {
+  text-align: left;
+  
+} */
 
 .pics {
   width: 200px;
