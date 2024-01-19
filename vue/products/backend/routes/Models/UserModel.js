@@ -68,15 +68,4 @@ export const getLogin = (data, result) => {
     });
 }
 
-export const getRecipe = (result) => {
-    db.query("SELECT UserNo, userNa, RecipeName, TitleImg\n" +
-        "FROM recipeboard r inner JOIN user u\n" +
-        "WHERE u.UserNo = r.FKuserID;\n", (err, results) => {
-        if (err) {
-            console.log(err);
-            result(err, null);
-        } else {
-            result(null, results);
-        }
-    });
-}
+
