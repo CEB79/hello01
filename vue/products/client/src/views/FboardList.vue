@@ -12,7 +12,7 @@
 
       <div id="list_table" class="skin1">
         <br />
-        <div id="bbs">
+        <div id="fboardTable">
           <div class="tblx"></div>
           <table>
             <thead>
@@ -527,6 +527,9 @@
               </tr>
             </tbody>
           </table>
+           <div style="text-align:right;margin:10px">
+        <b-button pill variant="info" >글 작성하기</b-button>
+      </div>
         </div>
         <br />
       </div>
@@ -543,6 +546,7 @@
         <a href="/entiz/enti.php?bn=15&amp;page=9">9</a>
         <a href="/entiz/enti.php?bn=15&amp;page=10">10</a>
         <a class="next" href="/entiz/enti.php?bn=15&amp;page=11">&gt;</a>
+        
         <a
           class="end"
           href="/entiz/enti.php?bn=15&amp;page=62348"
@@ -555,7 +559,9 @@
           title="이전 자유게시판"
           >이전 자유게시판</a
         >
+        
       </div>
+     
     </div>
     <!-- //list_bottom -->
 
