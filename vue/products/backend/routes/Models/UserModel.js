@@ -20,8 +20,6 @@ export const getUserById = (id, result) => {
         if(err) {
             console.log(err);
             result(err, null);
-        }else if(results = []){
-            me()
         }else {
             // console.log(results)
             result(null, results);

@@ -12,8 +12,9 @@ export const showUser = (req, res) => {
 }
 // Get Single Product 
 export const checkUserById = (req, res) => {
-    const data =req.body
-    getUserById(data, (err, results) => {
+    const id = req.params.id;
+    console.log(req.body);
+    getUserById(id, (err, results) => {
         if (err){
             res.send(err);
         }else{

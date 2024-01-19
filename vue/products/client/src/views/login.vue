@@ -71,7 +71,7 @@ export default{
             // console.log(this.userId[0].value)
             this.userId = "";
             this.userPw= "";
-            this.$router.push("/");
+            // this.$router.push();
             // console.log("성공");
             // return;
         } catch (err) {

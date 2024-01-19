@@ -5,7 +5,13 @@ import {showRecipe} from "./controllers/RBoard.js";
 const router = express.Router();
 
 router.get('/user', showUser);
-router.get('/user/:id', checkUserById);
+ 
+// Get Single User
+router.post('/user/:id', checkUserById);
+ 
+// // Create New Product
+
+// router.post('/user', createUser);
 router.post('/user', createUser);
 router.delete('/user/:id', deleteUser);
 router.post('/login', checkLogin);
