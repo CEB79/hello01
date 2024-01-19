@@ -5,7 +5,7 @@ import {checkLogin, checkUserById, createUser, deleteUser, showUser} from "./con
 import {showRecipe, showRecipeDetails, showRecipeIMG} from "./controllers/RBoard.js";
 
 //JY
-import { showMypage,} from "./controllers/Product_JY.js";
+import { showMypage } from "./controllers/Product_JY.js";
 
 const router = express.Router();
 
