@@ -68,4 +68,28 @@ export const getLogin = (data, result) => {
     });
 }
 
+export const getId = (data, result) => {
+    // console.log(data)
+    db.query("SELECT UserId FROM user WHERE UserNa = ? and UserPhon = ?", [data.UserNa, data.UserPhon], (err, results) =>{
+        if(err) {
+            console.log(err);
+            result(err, null);
+        }else{
+            console.log(results)
+            result(null, results);
+    }
+    });
+}
 
+export const getPw = (data, result) => {
+    // console.log(data)
+    db.query("SELECT UserPassword FROM user WHERE UserId = ? and UserPhon = ?", [data.UserId, data.UserPhon], (err, results) =>{
+        if(err) {
+            console.log(err);
+            result(err, null);
+        }else{
+            console.log(results)
+            result(null, results);
+    }
+    });
+}

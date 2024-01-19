@@ -1,4 +1,4 @@
-import {deleteUserById, getLogin, getUser, getUserById, insertUser} from "../Models/UserModel.js"
+import {deleteUserById, getId, getLogin, getPw, getUser, getUserById, insertUser} from "../Models/UserModel.js"
 // Show User
 export const showUser = (req, res) => {
     getUser((err, results) => {             
@@ -71,6 +71,28 @@ export const checkLogin = (req, res) =>{
     });
 }
 
+export const getIdtoUser = (req, res) =>{
+    const data = req.body;
+    getId(data, (err, results) => {
+        if (err){
+            console.log(err)
+            res.send(err);
+        }else{
+            res.json(results);
+        }
+    });
+}
+export const getPwtoUser = (req, res) =>{
+    const data = req.body;
+    getPw(data, (err, results) => {
+        if (err){
+            console.log(err)
+            res.send(err);
+        }else{
+            res.json(results);
+        }
+    });
+}
 // Create New User
 
 // // Get Single Product 
