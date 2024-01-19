@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/user', showUser);
  
 // Get Single User
-router.get('/user/:id', checkUserById);
+router.post('/user/:id', checkUserById);
  
 // // Create New Product
 

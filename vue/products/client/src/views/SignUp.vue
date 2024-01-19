@@ -22,8 +22,8 @@
           <div>
             <div class="checkout__input" id="sign_up_id">
               <p>아이디<span>*</span></p>
-              <input name="id" type="text" class="testid" v-model="userId"/>
-              <button type="button" class="testbtn" @click="checkUserId(userId)">
+              <input name="id" type="text" class="testid" v-model="userId" />
+              <button type="button" class="testbtn"  @click="checkUserId(userId)">
                 중복 확인
               </button>
             </div>
@@ -64,7 +64,7 @@
           </div>
           
           <div>
-            <button type="button" id="sign_up_btn" @click="signUpButton">
+            <button type="button" id="sign_up_btn" @click="signUpButton" disabled>
               회 원 가 입
             </button>
           </div>
@@ -86,19 +86,16 @@ export default {
       userPw:"",
       userPhon:"",
       userEmail:""
+      
     };
   },
   
-  created() {
-    this.checkUserId();
+
+  methods: {
     
-  },
-
-    methods: {
-
-      me:function(){
-        alert("Hi")
-      },
+    created(){
+      document.getElementsByClassName('testid').readonly = false;
+    },
 
 
       async createUser() {
@@ -116,22 +113,50 @@ export default {
         this.userPw = "";
         this.userPhon = "";
         this.userEmail = "";
-        this.$router.push("/");
+        this.$router.push("/login");
         console.log("성공");
       } catch (err) {
         console.log(err);
         console.log("실패");
       }
     },
+    
+    
     async checkUserId(id){
+  const target = document.getElementById('sign_up_btn');
       try{
+        await axios.post(`http://localhost:5000/user/${id}`, {
+        UserId: this.userId,
+
+      }).then(function(res){
         console.log(id);
-        await axios.get(`http://localhost:5000/user/${id}`);
+        console.log(res.data[0]);
+        if(id == ""){
+          alert("아이디를 입력해주세요");
+          return;
+        }
+        if(res.data[0] == undefined){
+          alert("사용 가능한 아이디 입니다.");
+          target.disabled = false;
+          
+        }else{
+          alert("사용 불가능한 아이디 입니다.");
+        }
+      }).catch(function(err){
+          console.log(err);
+      });  
+      // this.userId = "";
+      // this.$router.push("/");
       }catch(err){
-        console.log(err);
+      console.log(err);
       }
     },
   
+
+
+
+
+
 
 
         signUpButton(){
