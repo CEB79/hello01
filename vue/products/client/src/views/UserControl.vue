@@ -12,8 +12,9 @@
             name="userSerch"
             placeholder="아이디"
             v-model="userSerch"
+            @keydown="SerchUserId(userSerch)"
           />
-          <button class="userSerch_btn">검색</button>
+          <button class="userSerch_btn" @click="SerchUserId(userSerch)">검색</button>
         </div>
         <hr>
         <div>
@@ -53,12 +54,17 @@ export default {
     return {
       items: [],
       userSerch: ""
+
     };
   },
 
   created() {
     this.showUser();
   },
+  
+  
+
+  
 
   methods: {
     // Get All Products
@@ -71,35 +77,7 @@ export default {
       }
     },
 
-    // async getUserById() {
-    //   try {
-    //     const response = await axios.get(
-    //       `http://localhost:5000/user/${this.$route.params.id}`
-    //     );
-    //     this.userName = response.data.userName,
-    //     this.userId = response.data.userId,
-    //     this.userPw = response.data.userPw,
-    //     this.userPhon = response.data.userPhon,
-    //     this.userEmail = response.data.userEmail
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // },
-
-    // async getUserBySerchId() {
-    //   try {
-    //     const response = await axios.get(
-    //       `http://localhost:5000/products/${this.$route.params.id}`
-    //     );
-    //     this.userName = response.data.userName,
-    //     this.userId = response.data.userId,
-    //     this.userPw = response.data.userPw,
-    //     this.userPhon = response.data.userPhon,
-    //     this.userEmail = response.data.userEmail
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // },
+    
 
     async deleteUser(id){
       try{
@@ -109,6 +87,25 @@ export default {
         console.log(err);
       }
     },
+
+    async SerchUserId(id){
+      try{
+        const response  = await axios.post(`http://localhost:5000/user/${id}`, {
+        UserId: this.userSerch,
+      })  
+      this.items = response.data;
+
+      if(id ==""){
+        this.showUser()
+      }
+
+      // console.log(response.data);
+      }catch(err){
+      console.log(err);
+      }
+    },
+    
+
   },
 }
 </script>

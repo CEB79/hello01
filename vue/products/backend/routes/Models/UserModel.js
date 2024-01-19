@@ -16,7 +16,7 @@ export const getUser = (result) => {
 
 // Get Single User
 export const getUserById = (id, result) => {
-    db.query("SELECT UserId FROM user WHERE UserId = ?", [id], (err, results) => {             
+    db.query("SELECT * FROM user WHERE UserId = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
