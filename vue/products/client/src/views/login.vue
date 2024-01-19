@@ -40,10 +40,6 @@ export default{
         };
     },
 
-    created() {
-    this.checkLogin();
-
-    },
 
     methods: {
     // Get All Products

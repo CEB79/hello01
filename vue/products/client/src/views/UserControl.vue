@@ -11,6 +11,7 @@
             class="userSerch"
             name="userSerch"
             placeholder="아이디"
+            v-model="userSerch"
           />
           <button class="userSerch_btn">검색</button>
         </div>
@@ -51,15 +52,14 @@ export default {
   data() {
     return {
       items: [],
+      userSerch: ""
     };
   },
 
   created() {
     this.showUser();
   },
-  // created2: function(){
-  //     this.getUserById();
-  //   },
+
   methods: {
     // Get All Products
     async showUser() {
@@ -71,20 +71,35 @@ export default {
       }
     },
 
-    async getUserById() {
-      try {
-        const response = await axios.get(
-          `http://localhost:5000/products/${this.$route.params.id}`
-        );
-        this.userName = response.data.userName,
-        this.userId = response.data.userId,
-        this.userPw = response.data.userPw,
-        this.userPhon = response.data.userPhon,
-        this.userEmail = response.data.userEmail
-      } catch (err) {
-        console.log(err);
-      }
-    },
+    // async getUserById() {
+    //   try {
+    //     const response = await axios.get(
+    //       `http://localhost:5000/user/${this.$route.params.id}`
+    //     );
+    //     this.userName = response.data.userName,
+    //     this.userId = response.data.userId,
+    //     this.userPw = response.data.userPw,
+    //     this.userPhon = response.data.userPhon,
+    //     this.userEmail = response.data.userEmail
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // },
+
+    // async getUserBySerchId() {
+    //   try {
+    //     const response = await axios.get(
+    //       `http://localhost:5000/products/${this.$route.params.id}`
+    //     );
+    //     this.userName = response.data.userName,
+    //     this.userId = response.data.userId,
+    //     this.userPw = response.data.userPw,
+    //     this.userPhon = response.data.userPhon,
+    //     this.userEmail = response.data.userEmail
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // },
 
     async deleteUser(id){
       try{
