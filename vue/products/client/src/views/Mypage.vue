@@ -14,11 +14,11 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{ items.UserNo }}</td>
-            <td>{{ items.UserNa }}</td>
-            <td>{{ items.UserPhon }}</td>
-            <td class="actcss">{{ items.FK__fboard }}건</td>
-            <td class="actcss">{{ items.User_userId }}건</td>
+            <td>{{ itemss.UserNo }}</td>
+            <td>{{ itemss.UserNa }}</td>
+            <td>{{ itemss.UserPhon }}</td>
+            <td class="actcss">{{ itemss.rboard }}건</td>
+            <td class="actcss">{{ itemss.fboard }}건</td>
           </tr>
         </tbody>
       </table>
@@ -86,6 +86,7 @@ export default {
   data() {
     return {
       items: [],
+      itemss : {},
     };
   },
 
@@ -101,6 +102,16 @@ export default {
           const response = await axios.post("http://localhost:5000/showmypage",{UserNo:2}); //나중에 로컬스토리지 에서 받은 것으로 변경하기
           console.log(response);
           this.items = response.data;
+          // this.itemss = Object.values(this.items[0]);
+          console.log(Object.keys(this.items[0]));
+          console.log(Object.values(this.items[0]));
+          this.itemss.UserNo = Object.values(this.items[0])[0];
+          this.itemss.UserNa = Object.values(this.items[0])[1];
+          this.itemss.UserPhon = Object.values(this.items[0])[2];
+          this.itemss.rboard = Object.values(this.items[0])[3];
+          this.itemss.fboard = Object.values(this.items[0])[4];
+          console.log(this.itemss)
+          
       } catch (err) {
         console.log(err);
       }
