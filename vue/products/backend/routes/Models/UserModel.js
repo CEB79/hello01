@@ -67,29 +67,16 @@ export const getLogin = (data, result) => {
     }
     });
 }
-// // // Get Single Product
-// // export const getProductById = (id, result) => {
-// //     db.query("SELECT * FROM product WHERE product_id = ?", [id], (err, results) => {             
-// //         if(err) {
-// //             console.log(err);
-// //             result(err, null);
-// //         } else {
-// //             result(null, results[0]);
-// //         }
-// //     });   
-// // }
- 
 
- 
-// // // Update Product to Database
-// // export const updateProductById = (data, id, result) => {
-// //     db.query("UPDATE product SET product_name = ?, product_price = ? WHERE product_id = ?", [data.product_name, data.product_price, id], (err, results) => {             
-// //         if(err) {
-// //             console.log(err);
-// //             result(err, null);
-// //         } else {
-// //             result(null, results);
-// //         }
-// //     });   
-// // }
- 
+export const getRecipe = (result) => {
+    db.query("SELECT UserNo, userNa, RecipeName, TitleImg\n" +
+        "FROM recipeboard r inner JOIN user u\n" +
+        "WHERE u.UserNo = r.FKuserID;\n", (err, results) => {
+        if (err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });
+}

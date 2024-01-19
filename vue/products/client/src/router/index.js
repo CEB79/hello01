@@ -11,6 +11,7 @@ import UserControl from '../views/UserControl.vue'
 import main from '../views/main.vue'
 import RecipeBoard from '../views/RecipeBoard.vue'
 import RecipeDetails from "../views/RecipeDetails.vue";
+import RecipeRegister from "../views/RecipeRegister.vue";
 
 const routes = [
     {
@@ -53,7 +54,11 @@ const routes = [
         name: 'RecipeDetails',
         component: RecipeDetails
     },
-
+    {
+        path: "/RecipeRegister",
+        name: "RecipeRegister",
+        component: RecipeRegister
+    },
 
     
     {
