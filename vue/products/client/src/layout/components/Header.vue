@@ -19,6 +19,8 @@
         <div class="system">
           <button type="button" class="loginmenu" onclick="location.href='/login'">로그인</button>
           <button type="button" class="membermenu" onclick="location.href='/SignUp'">회원가입</button>
+          <button type="button" class="mypage" onclick="location.href='/Mypage'">마이페이지</button>
+          <button type="button" class="logout" onclick="location.href='/'">로그아웃</button>
         </div>
       </div>
       <div class="hero__search">
@@ -96,7 +98,7 @@ button {
 }
 
 
-.loginmenu .membermenu{
+.loginmenu .membermenu .mypage .logout{
   content: "";
   display: inline-block;
   width: 3px;
