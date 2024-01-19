@@ -528,7 +528,7 @@
             </tbody>
           </table>
            <div style="text-align:right;margin:10px">
-        <b-button pill variant="info" >글 작성하기</b-button>
+        <b-button pill variant="info" onclick="FboardWrite" >글 작성하기</b-button>
       </div>
         </div>
         <br />
