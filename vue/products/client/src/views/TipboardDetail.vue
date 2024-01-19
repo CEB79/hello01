@@ -1,22 +1,24 @@
 <template>
   <body>
-    <section>
-      <div class="tipDT">
-        <h5>Small image with <code>fluid</code>:</h5>
-        <b-img
-          src="https://picsum.photos/300/150/?image=41"
-          fluid
-          alt="Fluid image"
-        ></b-img>
+<b-container fluid class="p-4 bg-dark">
+  <b-row>
 
-        <h5 class="my-3">Small image with <code>fluid-grow</code>:</h5>
-        <b-img
-          src="https://picsum.photos/300/150/?image=41"
-          fluid-grow
-          alt="Fluid-grow image"
-        ></b-img>
-      </div>
-    </section>
+
+
+    <b-col>
+      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1"></b-img>
+    </b-col>
+    <b-col>
+      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=58" alt="Image 2"></b-img>
+    </b-col>
+    <b-col>
+      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Image 3"></b-img>
+    </b-col>
+
+
+    
+  </b-row>
+</b-container>
   </body>
 </template>
 
