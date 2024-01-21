@@ -1,59 +1,122 @@
 <template>
-  <!-- <Subpage :pagetit="'자유 소통 게시판'"> -->
-  <section class="fboardWrite">
-    <br /><br /><br /><br />
-    <br /><br /><br /><br />
-    <div id="fboardName">
-      <span><h1>자유 게시판</h1></span>
-      <span><h4>회원끼리 자유롭게 소통하는 게시판입니다.</h4></span>
-      <br /><br />
-    </div>
-
-    <div class="freeboard">
-      <div class="fbTitle">
-        <b-input-group prepend="제목  " class="mb-2">
-          <b-form-input aria-label="title" width="800px"></b-form-input>
-        </b-input-group>
+  <b-container rounded fluid class="p-4 bg-ivory" align="center">
+    <section class="fboardWrite">
+      <div id="fboardName">
+        <h1><b>자유 게시판</b></h1>
+        <br /><br />
+        <h4>회원끼리 자유롭게 소통하는 게시판입니다.</h4>
+        <br /><hr
+              style="
+                margin-bottom: 30px;
+                border: 0px;
+                height: 20px;
+                background: linear-gradient(
+                  to left,
+                  transparent,
+                  #7fad39,
+                  transparent
+                );
+              "
+            />
       </div>
 
-      <div class="fbWrite">
-        <b-form-textarea
-          id="textarea-rows"
-          placeholder="내용을 입력하세요."
-          rows="8"
-        ></b-form-textarea>
-      </div>
-      <div class="fbBtn">
-        <b-button class="btn" variant="info" type="submit" >등록</b-button>
-        <b-button class="btn" variant="outline-secondary">취소</b-button>
-      </div>
-    </div>
+      <div class="freeboard">
+        <div class="fbTitle">
+          <b-input-group prepend="제목" class="mb-2">
+            <b-form-input
+              v-model="FboardTitle"
+              aria-label="title"
+              width="800px"
+              style="
+                border: 2px solid #7fad39;
+                border-radius: 5px;
+                padding: 8px;
+              "
+            ></b-form-input>
+          </b-input-group>
+        </div>
 
-    <!-- <div class="freeboard">
-      <div class="fbTitle">
-        <div style="color: black">제목</div>
-        <input type="text" />
+        <div class="fbWrite">
+          <b-form-textarea
+            v-model="fboardContent"
+            id="textarea-rows"
+            placeholder="내용을 입력하세요."
+            rows="8"
+            style="border: 2px solid #7fad39; border-radius: 5px; padding: 8px"
+          ></b-form-textarea>
+          <div class="fbBtn">
+          <b-button
+            @click="submitForm"
+            class="btn"
+            style="background-color: #7fad39; font-color: white"
+            type="submit"
+            >등록</b-button
+          >&nbsp;
+          <b-button @click="cancelForm" class="btn" variant="outline-secondary"
+            >취소</b-button
+          >
+        </div>
+        </div>
+        <hr
+              style="
+                margin-bottom: 30px;
+                border: 0px;
+                height: 20px;
+                background: linear-gradient(
+                  to left,
+                  transparent,
+                  #7fad39,
+                  transparent
+                );
+              "
+            />
       </div>
-      <div class="fbWrite">
-        <div style="color: black">내용</div>
-        <textarea
-          id="fboardWrite"
-          placeholder="내용을 입력하세요."
-          cols="50"
-          align="center"
-        ></textarea>
-        <div class="fbBtn">
-          <input type="button" value="등록하기" />
-          <input type="button" value="취소" />
-        </div> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  </section>
+    </section>
+  </b-container>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      FboardTitle: "",
+      content: "",
+    };
+  },
+  methods: {
+    submitForm() {
+      const formData = {
+        title: this.fboardTitle,
+        content: this.fboardContent,
+      };
+
+      // 서버로 데이터 전송
+      fetch("/api/board/save", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("데이터 전송 성공:", data);
+        })
+        .catch((error) => {
+          console.error("데이터 전송 실패:", error);
+        });
+    },
+    cancelForm() {
+      // 취소 버튼 클릭 시 페이지 이동
+      this.$router.push("/fboardList"); // fboardList.vue의 경로로 수정
+    },
+  },
+};
+</script>
+
 <style>
-h1,
-h4 {
+.fboardName h1,
+.fboardName h4 {
   margin-left: 80px;
   min-width: 350px;
 }
@@ -67,14 +130,13 @@ h4 {
 .fbTitle {
   margin: 0 auto; /* 수평 가운데 정렬 */
   width: 80%;
-}
-
-.fbTitle input,
-.fbWrite textarea {
   width: 100%; /* input과 textarea의 너비를 100%로 설정 */
   max-width: 1024px;
   min-width: 350px;
+  text-align: center;
 }
+
+
 
 .fbWrite {
   display: table;
@@ -83,13 +145,13 @@ h4 {
 .fbWrite textarea {
   height: 500px;
 }
-#btn{
+#btn {
   margin: 10px;
 }
 
 .fbBtn {
   text-align: right;
-  margin-right: 10  0px;
-  margin: 10px 100px;
+  margin: 10px;
+
 }
 </style>

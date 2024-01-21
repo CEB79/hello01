@@ -28,4 +28,8 @@ router.get('/recipe', showRecipe);
 router.get('/recipedetails', showRecipeDetails);
 router.get('/recipeimg', showRecipeIMG);
 
+//EJ 컨트롤러 안에 있는 js파일의 이름을 가져와야함.
+
+
+
 export default router;

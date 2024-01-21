@@ -17,6 +17,7 @@ import TipBoard from "../views/TipBoard.vue";
 import TipboardDetail from "../views/TipboardDetail.vue";
 import FboardList from "../views/FboardList.vue";
 import FboardWrite from "../views/FboardWrite.vue";
+import FboardDetail from "../views/FboardDetail.vue";
 
 
 const routes = [
@@ -81,6 +82,11 @@ const routes = [
         path: "/FboardList",
         name: "FboardList",
         component: FboardList,
+    },
+    {
+        path: "/FboardDetail",
+        name: "FboardDetail",
+        component: FboardDetail
     },
     {
         path: "/TipBoard",

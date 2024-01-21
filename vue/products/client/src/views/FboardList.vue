@@ -2,12 +2,25 @@
   <container>
     <div id="column2">
       <div class="bbs_list_header">
-        <div class="btit-s15"></div>
-        <h1>자유게시판</h1>
-        <h4>회원끼리 자유롭게 소통하는 게시판입니다.</h4>
-        <div
-          style="width: 332px; top: 0px; right: 0px; position: absolute"
-        ></div>
+        <div class="fboardName">
+          <h1><b>자유 게시판</b></h1>
+          <br /><br />
+          <h4>회원끼리 자유롭게 소통하는 게시판입니다.</h4>
+          <br />
+          <hr
+            style="
+              margin-bottom: 30px;
+              border: 0px;
+              height: 20px;
+              background: linear-gradient(
+                to left,
+                transparent,
+                #7fad39,
+                transparent
+              );
+            "
+          />
+        </div>
       </div>
 
       <div id="list_table" class="skin1">
@@ -30,15 +43,15 @@
                   <a
                     href="read.php?bn=15&amp;num=3765950&amp;page=3"
                     class="photolink"
-                    >1560445</a
+                    >45</a
                   >
                 </td>
                 <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765950&amp;page=3"
-                    >인덕션에 쓰기 좋은 후라이팬 추천요
-                  </a>
-                  <em>4</em>
-                </td>
+  <router-link to="/FboardDetail">
+    <a> 후라이팬 추천요 </a>
+  </router-link>
+  <em>4</em>
+</td>
                 <td class="user_function">..</td>
                 <td class="regdate numbers" title="2024-01-16 15:39:43">
                   15:39:43
@@ -50,12 +63,12 @@
                   <a
                     href="read.php?bn=15&amp;num=3765949&amp;page=3"
                     class="photolink"
-                    >1560444</a
+                    >44</a
                   >
                 </td>
                 <td class="title">
                   <a href="read.php?bn=15&amp;num=3765949&amp;page=3"
-                    >윤대통령 실거주 의무 폐지 더는 지체할 수 없어</a
+                    >양식조리사 과정 준비</a
                   >
                   <em class="best">31</em>
                 </td>
@@ -70,7 +83,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765948&amp;page=3"
                     class="photolink"
-                    >1560443</a
+                    >43</a
                   >
                 </td>
                 <td class="title">
@@ -90,7 +103,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765947&amp;page=3"
                     class="photolink"
-                    >1560442</a
+                    >42</a
                   >
                 </td>
                 <td class="title">
@@ -110,12 +123,12 @@
                   <a
                     href="read.php?bn=15&amp;num=3765946&amp;page=3"
                     class="photolink"
-                    >1560441</a
+                    >41</a
                   >
                 </td>
                 <td class="title">
                   <a href="read.php?bn=15&amp;num=3765946&amp;page=3"
-                    >산소가 4개에요 다 따로 있어요 이거 관리
+                    >제사상 다들 차리시나요?
                   </a>
                   <em class="best">11</em>
                 </td>
@@ -130,7 +143,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765945&amp;page=3"
                     class="photolink"
-                    >1560440</a
+                    >40</a
                   >
                 </td>
                 <td class="title">
@@ -150,7 +163,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765944&amp;page=3"
                     class="photolink"
-                    >1560439</a
+                    >39</a
                   >
                 </td>
                 <td class="title">
@@ -170,7 +183,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765943&amp;page=3"
                     class="photolink"
-                    >1560438</a
+                    >38</a
                   >
                 </td>
                 <td class="title">
@@ -190,12 +203,12 @@
                   <a
                     href="read.php?bn=15&amp;num=3765942&amp;page=3"
                     class="photolink"
-                    >1560437</a
+                    >37</a
                   >
                 </td>
                 <td class="title">
                   <a href="read.php?bn=15&amp;num=3765942&amp;page=3"
-                    >교수되는 것만 생각한다면 간호학과 어떨까요?</a
+                    >동남아 요리에 필요한 향신료 반반씩 나누어 사실 분?</a
                   >
                   <em class="best">16</em>
                 </td>
@@ -210,7 +223,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765941&amp;page=3"
                     class="photolink"
-                    >1560436</a
+                    >36</a
                   >
                 </td>
                 <td class="title">
@@ -230,7 +243,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765940&amp;page=3"
                     class="photolink"
-                    >1560435</a
+                    >35</a
                   >
                 </td>
                 <td class="title">
@@ -250,13 +263,13 @@
                   <a
                     href="read.php?bn=15&amp;num=3765939&amp;page=3"
                     class="photolink"
-                    >1560434</a
+                    >34</a
                   >
                 </td>
                 <td class="title">
                   <a href="read.php?bn=15&amp;num=3765939&amp;page=3"
-                    >한동훈 거짓말 또 걸림 ㅡ김건희 23억 수익 의견서</a
-                  >
+                    >창업을 하고 싶은데요
+                  </a>
                   <em class="best">18</em>
                 </td>
                 <td class="user_function">1일1거짓말..</td>
@@ -270,7 +283,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765937&amp;page=3"
                     class="photolink"
-                    >1560433</a
+                    >33</a
                   >
                 </td>
                 <td class="title">
@@ -290,7 +303,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765936&amp;page=3"
                     class="photolink"
-                    >1560432</a
+                    >32</a
                   >
                 </td>
                 <td class="title">
@@ -310,7 +323,7 @@
                   <a
                     href="read.php?bn=15&amp;num=3765935&amp;page=3"
                     class="photolink"
-                    >1560431</a
+                    >31</a
                   >
                 </td>
                 <td class="title">
@@ -325,211 +338,16 @@
                 </td>
                 <td class="numbers">1,718</td>
               </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765934&amp;page=3"
-                    class="photolink"
-                    >1560430</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765934&amp;page=3"
-                    >욕실에 수전 하고 환풍기를 교체 했는데요</a
-                  >
-                  <em>2</em>
-                </td>
-                <td class="user_function">ㅇ</td>
-                <td class="regdate numbers" title="2024-01-16 15:11:31">
-                  15:11:31
-                </td>
-                <td class="numbers">868</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765933&amp;page=3"
-                    class="photolink"
-                    >1560429</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765933&amp;page=3"
-                    >보여지는 것은
-                  </a>
-                  <em>1</em>
-                </td>
-                <td class="user_function">우리는지금</td>
-                <td class="regdate numbers" title="2024-01-16 15:11:28">
-                  15:11:28
-                </td>
-                <td class="numbers">290</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765931&amp;page=3"
-                    class="photolink"
-                    >1560428</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765931&amp;page=3"
-                    >사유지에 폐지와 폐가전 모으는 노인을 어떻게 할까요?</a
-                  >
-                  <em class="best">12</em>
-                </td>
-                <td class="user_function">11111</td>
-                <td class="regdate numbers" title="2024-01-16 15:01:16">
-                  15:01:16
-                </td>
-                <td class="numbers">1,313</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765930&amp;page=3"
-                    class="photolink"
-                    >1560427</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765930&amp;page=3"
-                    >82에 본인 흉 올라옴 카톡사진 바꾸는 여자</a
-                  >
-                  <em class="best">19</em>
-                </td>
-                <td class="user_function">..</td>
-                <td class="regdate numbers" title="2024-01-16 14:58:58">
-                  14:58:58
-                </td>
-                <td class="numbers">2,114</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765928&amp;page=3"
-                    class="photolink"
-                    >1560426</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765928&amp;page=3"
-                    >검사도 확인하기 어려운 최은순 계좌 (feat.홍사훈페북)</a
-                  >
-                  <em>4</em>
-                </td>
-                <td class="user_function">..</td>
-                <td class="regdate numbers" title="2024-01-16 14:50:30">
-                  14:50:30
-                </td>
-                <td class="numbers">687</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765927&amp;page=3"
-                    class="photolink"
-                    >1560425</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765927&amp;page=3"
-                    >힙합공연 어디서 볼 수 있을까요?</a
-                  >
-                  <em>2</em>
-                </td>
-                <td class="user_function">공연</td>
-                <td class="regdate numbers" title="2024-01-16 14:50:17">
-                  14:50:17
-                </td>
-                <td class="numbers">113</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765926&amp;page=3"
-                    class="photolink"
-                    >1560424</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765926&amp;page=3"
-                    >김정은, 전쟁 결심한 듯 "한반도가 위험하다"..</a
-                  >
-                  <em class="best">28</em>
-                </td>
-                <td class="user_function">...</td>
-                <td class="regdate numbers" title="2024-01-16 14:43:55">
-                  14:43:55
-                </td>
-                <td class="numbers">3,475</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765925&amp;page=3"
-                    class="photolink"
-                    >1560423</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765925&amp;page=3"
-                    >대부업체에서 5천만원 빌렸으면 한달 이자?</a
-                  >
-                  <em>3</em>
-                </td>
-                <td class="user_function">대부</td>
-                <td class="regdate numbers" title="2024-01-16 14:43:17">
-                  14:43:17
-                </td>
-                <td class="numbers">1,068</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765924&amp;page=3"
-                    class="photolink"
-                    >1560422</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765924&amp;page=3"
-                    >개인연금 200이상 받는다는분들</a
-                  >
-                  <em class="best">20</em>
-                </td>
-                <td class="user_function">....</td>
-                <td class="regdate numbers" title="2024-01-16 14:42:40">
-                  14:42:40
-                </td>
-                <td class="numbers">3,032</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765923&amp;page=3"
-                    class="photolink"
-                    >1560421</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765923&amp;page=3"
-                    >뉴질랜드 배대지는?</a
-                  >
-                  <em>1</em>
-                </td>
-                <td class="user_function">ㅗㅗ</td>
-                <td class="regdate numbers" title="2024-01-16 14:41:11">
-                  14:41:11
-                </td>
-                <td class="numbers">311</td>
-              </tr>
             </tbody>
           </table>
-           <div style="text-align:right;margin:10px">
-        <b-button pill variant="info" onclick="FboardWrite" >글 작성하기</b-button>
-      </div>
+          <div style="text-align: right; margin: 10px">
+            <!-- router-link를 사용하여 버튼 클릭 시 경로를 변경 -->
+            <router-link to="/FboardWrite">
+              <b-button style="background-color: #7fad39; font-color: white"
+                >글 작성하기</b-button
+              >
+            </router-link>
+          </div>
         </div>
         <br />
       </div>
@@ -546,7 +364,7 @@
         <a href="/entiz/enti.php?bn=15&amp;page=9">9</a>
         <a href="/entiz/enti.php?bn=15&amp;page=10">10</a>
         <a class="next" href="/entiz/enti.php?bn=15&amp;page=11">&gt;</a>
-        
+
         <a
           class="end"
           href="/entiz/enti.php?bn=15&amp;page=62348"
@@ -559,9 +377,7 @@
           title="이전 자유게시판"
           >이전 자유게시판</a
         >
-        
       </div>
-     
     </div>
     <!-- //list_bottom -->
 
@@ -604,20 +420,28 @@
               title="검색하기"
             />
           </div>
+          <br />
         </fieldset>
       </form>
       <div class="list_btn"></div>
     </div>
+    <hr
+      style="
+        margin-bottom: 30px;
+        border: 0px;
+        height: 20px;
+        background: linear-gradient(to left, transparent, #7fad39, transparent);
+      "
+    />
   </container>
 </template>
 
-<style scoped>
-h1, h4 {
- margin-left: 20%; 
-}
 
-.notice {
-  color: red;
+
+<style scoped>
+h1,
+h4 {
+  margin-left: 20%;
 }
 
 table {
@@ -643,10 +467,12 @@ td:first-child {
   margin-bottom: 40px;
   width: 60%; /* 너비를 화면의 60%로 설정 */
   margin: 0 auto; /* 수평 가운데 정렬 */
-  
 }
 
-.fbPageNo, .end, .other, .list_search{
+.fbPageNo,
+.end,
+.other,
+.list_search {
   font-size: 15px;
   text-align: center;
 }
