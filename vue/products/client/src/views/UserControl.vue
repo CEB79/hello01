@@ -12,7 +12,7 @@
             name="userSerch"
             placeholder="아이디"
             v-model="userSerch"
-            @keydown="SerchUserId(userSerch)"
+            @keyup="SerchUserId(userSerch)"
           />
           <button class="userSerch_btn" @click="SerchUserId(userSerch)">검색</button>
         </div>
