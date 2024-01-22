@@ -40,7 +40,7 @@
         <div class='col-lg-4 col-md-6 col-sm-6' v-for="item in items" :key="item.RecipeID">
           <div class='thumbnail_item'>
             <a href="RecipeDetails">
-              <img class="thumbnail_item__pic" :src="getImageUrl(item.TitleImg)" alt="">
+              <img class="thumbnail_item__pic" :src="item.TitleImg" alt="">
               <div class='thumbnail_item__name'>
                 <h6>{{ item.RecipeName }}</h6>
                 <div class='thumbnail_item__price'>{{ item.userNa }}</div>
@@ -73,10 +73,6 @@ export default {
       } catch (err) {
         console.log(err);
       }
-    },
-    // 문자열 형태의 이미지 주소를 이미지 URL로 변환하는 메서드
-    getImageUrl(titleImg) {
-      return `${titleImg}`;
     },
   }
 }

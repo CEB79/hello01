@@ -3,7 +3,7 @@
 			<div class="footer__inner">
 				<div class="footer__content_first">
 					<div class="footer_content left">
-						<p class="title">(주)레시판</p>
+						<!-- <p class="title">(주)레시판</p> -->
 			
 					</div>
 					
@@ -23,7 +23,7 @@
 						</div>
 						<p class="footer__content_sub_txt">
 							법인명(상호) : (주)레시판 |  사업자등록번호 : 123-45-67890  | 벤처기업 : 제 20200202202호
-							<br>특허 제 20-1234567호  |  통신판매업신고 : 2020-서울관악구-3306  |   개인정보보호책임자 : 송신애
+							<br>특허 제 20-1234567호  |  통신판매업신고 : 2020-서울관악구-3306  |   개인정보보호책임자 : 김은진
 							<br>주소 : 서울 관악구 남부순환료 1820, 7층 |  대표이사 :  김선호
 							<br>제휴/협력 문의 : sun@email.com  |  채용문의 :  sun@email.com
 						</p>
@@ -153,6 +153,7 @@ a:active, a:hover {
 }
 
 .footer_content .footer__content_sub_txt {
+    margin-top: 50px;
     font-weight: 500;
     font-size: 13px;
     line-height: 20px;
