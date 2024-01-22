@@ -8,26 +8,19 @@
 
         <nav class="header__menu">
           <ul>
-            <li>
-              <a href="/" class="headermenu">홈</a>
+            <li><a href="/" class="headermenu">홈</a>
             </li>
-            <li>
-              <a href="/RecipeBoard" class="headermenu">레시피</a>
-            </li>
-            <li>
-              <a href="/FboardList" class="headermenu">게시판</a>
-            </li>
-            <li>
-              <a href="/TipBoard" class="headermenu">Tip</a>
-            </li>
+            <li><a href="/RecipeBoard" class="headermenu">레시피</a></li>
+            <li><a href="/FboardList" class="headermenu">게시판</a></li>
+            <li><a href="/TipBoard" class="headermenu">Tip</a></li>
           </ul>
         </nav>
         <!-- <div id="mobile-menu-wrap"></div> -->
         <div class="system">
-          <button type="button" class="loginmenu" onclick="location.href='/login'">로그인</button>
-          <button type="button" class="membermenu" onclick="location.href='/SignUp'">회원가입</button>
-          <button type="button" class="mypage" onclick="location.href='/Mypage'">마이페이지</button>
-          <button type="button" class="logout" onclick="location.href='/'">로그아웃</button>
+          <button type="button" class="loginmenu" onclick="location.href='/login'" v-show="Logout">로그인</button>
+          <button type="button" class="membermenu" onclick="location.href='/SignUp'" v-show="Logout">회원가입</button>
+          <button type="button" class="mypage" onclick="location.href='/Mypage'" v-show="LogOn">마이페이지</button>
+          <button type="button" class="logout" @click="logOut" v-show="LogOn" >로그아웃</button>
         </div>
       </div>
       <div class="hero__search">
@@ -45,8 +38,41 @@
     </div>
   </header>
 </template>
-<script></script>
+<script>
+// import router from router
+export default{
 
+    data(){
+      return{
+      LogOn: false,
+      Logout: true
+    };
+  },
+  
+  created(){
+    this.login();
+  },
+
+  methods:{
+    login(){
+      const test = localStorage.getItem("UserNo")
+
+      console.log(test);
+      if(test !== null){
+        this.LogOn = true;
+        this.Logout = false;
+      }
+    },
+
+    logOut(){
+      window.localStorage.removeItem("UserNo");
+      window.location.href= '/';
+    }
+  }
+}
+
+
+</script>
 <style scoped>
 /************************button*************************/
 header{
@@ -87,7 +113,7 @@ button {
 .headermenu{
   /* background-color: rgb(134, 245, 100); */
   padding: 30px;
-  margin: 0px -1em;
+  margin: 0px 30px;
   border-radius: 80px;
   border-style: none;
   font-weight: bold;
@@ -279,6 +305,4 @@ nav ul {
   display: block;
 }
 /*************************오가닉 header*************************/
-
-    
-</style>s
+</style>
