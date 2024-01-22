@@ -1,10 +1,25 @@
 <template >
-  <b-container rounded fluid class="p-4 bg-ivory"  align="center">
-    <div id="boardName">
-      <h1>주방 꿀팁</h1><br>
-      <h4>주방에서 유용한 팁을 공유합니다.</h4><br>
+  <b-container rounded fluid class="p-4 bg-ivory" align="center" >
+    <div class="boardName">
+      <h1><b>주방 꿀팁 게시판</b></h1>
+        <br /><br />
+        <h4>주방에서 유용한 꿀팁 공유 게시판입니다.</h4>
+        <br />
+        <hr
+              style="
+                margin-bottom: 30px;
+                border: 0px;
+                height: 20px;
+                background: linear-gradient(
+                  to left,
+                  transparent,
+                  #7fad39,
+                  transparent
+                );
+              "
+            />
+              <br>
     </div>
-
 
     <!-- 전체 가운데정렬 하고싶다 -->
 
@@ -67,15 +82,16 @@
             </template>
           </b-card>
 
-          <b-card
-            title="버터 쉽게 소분 보관법"
-            style="max-width: 20rem;"
-            img-src="https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjdfMjMw/MDAxNjc5ODQzNzAzOTQx.lNcKhYwtwSUVQHIGtTZ1HwMAfQ-_mNzg9B8D02i-zXog.P35nbKbfTB-H_oubFLQiqkLD5VEUPb5HgnUeGyJaY-gg.JPEG.hee81hoo/%EB%B2%84%ED%84%B0_%EC%86%8C%EB%B6%84_%EB%B3%B4%EA%B4%80%EB%B2%95_%EC%A2%85%EC%9D%B4%ED%98%B8%EC%9D%BC_%EB%B0%80%ED%8F%90%EC%9A%A9%EA%B8%B0_%EA%B0%84%EB%8B%A8_%EB%B0%A9%EB%B2%95_03.JPG?type=w800"
-            img-alt="Image"
-            img-top
-            img-height="250"
-            img-width="200"
-          >
+            <b-card
+              title="버터 쉽게 소분 보관법"
+              style="max-width: 20rem;"
+              img-src="https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjdfMjMw/MDAxNjc5ODQzNzAzOTQx.lNcKhYwtwSUVQHIGtTZ1HwMAfQ-_mNzg9B8D02i-zXog.P35nbKbfTB-H_oubFLQiqkLD5VEUPb5HgnUeGyJaY-gg.JPEG.hee81hoo/%EB%B2%84%ED%84%B0_%EC%86%8C%EB%B6%84_%EB%B3%B4%EA%B4%80%EB%B2%95_%EC%A2%85%EC%9D%B4%ED%98%B8%EC%9D%BC_%EB%B0%80%ED%8F%90%EC%9A%A9%EA%B8%B0_%EA%B0%84%EB%8B%A8_%EB%B0%A9%EB%B2%95_03.JPG?type=w800"
+              img-alt="Image"
+              img-top
+              img-height="250"
+              img-width="200"
+              @click="goToDetail"
+            >
             <b-card-text>
               버터 소분해서 보관할 때, 칼에 묻지 않게 잘라서 깔끔해요!
             </b-card-text>
@@ -185,7 +201,19 @@
               <a href="#"> 4 </a>&nbsp;
             </span> <br><br> <br><br>
 
-</div>
+</div> <hr
+              style="
+                margin-bottom: 30px;
+                border: 0px;
+                height: 20px;
+                background: linear-gradient(
+                  to left,
+                  transparent,
+                  #7fad39,
+                  transparent
+                );
+              "
+            />
         
       </div>
 
@@ -194,7 +222,19 @@
   </b-container>
 </template>
 
-<script></script>
+<script>
+
+
+export default {
+  methods: {
+    goToDetail() {
+      // 클릭 시 '/tipboarddetail' 경로로 이동
+      this.$router.push('/tipboarddetail');
+    }
+  }
+};
+
+</script>
 
 <style scoped>
 /* .blog__item {
@@ -229,6 +269,11 @@ h1 {
   margin: 10px; 
   /* 각 b-card 간의 간격 설정 */
 }
+
+h4.card-title {
+  margin-left: 0px;
+}
+
 .container.b-img {
   min-width: 50px;
   width: 200px;
