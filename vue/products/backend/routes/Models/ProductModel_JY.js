@@ -54,3 +54,18 @@ export const deleteboardNo = (name, result) => {
         }
     });   
 }
+
+
+////////////////////////Main/////////////////////////
+
+//main2_1부분 인기검색어 1~10개 출력
+export const main2_1 = (result) => {
+    db.query("SELECT recipeboard.RecipeName FROM recipeboard LIMIT 0,10", (err, results) => {
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });
+}

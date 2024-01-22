@@ -3,9 +3,8 @@ import express from "express";
 import {checkLogin, checkUserById, createUser, deleteUser, getIdtoUser, getPwtoUser, showUser} from "./controllers/User.js";
 //SUN
 import {showRecipe, showRecipeDetails, showRecipeIMG} from "./controllers/RBoard.js";
-
 //JY
-import { showMypage, showmyrecipe, showmyboard, deleteboard } from "./controllers/Product_JY.js";
+import { showMypage, showmyrecipe, showmyboard, deleteboard, showmain2_1 } from "./controllers/Product_JY.js";
 
 
 const router = express.Router();
@@ -25,6 +24,8 @@ router.post('/showmypage', showMypage);
 router.post('/showmyrecipe', showmyrecipe);
 router.post('/showmyboard', showmyboard);
 router.delete('/board/:name', deleteboard);
+router.get('/showmain2_1', showmain2_1);
+
 
 //SUN
 router.get('/recipe', showRecipe);

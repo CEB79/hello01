@@ -1,9 +1,8 @@
 <template>
   <div class="content section01">
-
-<!-----------------------------------------
+    <!-----------------------------------------
             메인-1 슬라이드 사진부분
-  -------------------------------------------->
+    -------------------------------------------->
     <!-- 플러그인 설치 " npm install @splidejs/vue-splide " 설치해야 작동됨-->
     <!-- <div id="mainslider"> -->
 
@@ -21,10 +20,9 @@
       </splide>
     </div>
 
-
-<!-----------------------------------------
+    <!-----------------------------------------
                  메인-2 부분
-  -------------------------------------------->
+    -------------------------------------------->
 
     <!-- 메인2-1 -- 인기검색어 부분 -->
     <div class="main2 row justify-content-md-center">
@@ -37,10 +35,10 @@
         <p>고민을 덜어주는 추천 검색어</p>
         <div class="Tag">
           <ul>
-            <li>
-              <a href="/category/search.asp?s_value={{카레}}">#{{카레}}</a>
+            <li v-for="dbma2_1 in dbmain2_1" :key="dbma2_1.RecipeName">
+              <a href="/category/search.asp?s_value=카레">#{{ dbma2_1.RecipeName}}</a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/category/search.asp?s_value=마요네스">#마요네스</a>
             </li>
             <li>
@@ -60,7 +58,7 @@
             </li>
             <li>
               <a href="/category/search.asp?s_value=간단 꿀조합">#간단 꿀조합</a>
-            </li>
+            </li>-->
           </ul>
         </div>
       </div>
@@ -76,13 +74,15 @@
             <h5>
               <a href="/RecipeBoard">특별한 기능 1</a>
             </h5>
-            <br>
+            <br />
             <p class="fontcolor">집에 있는 재료로 만들고 싶다면?</p>
-            <br>
-            <p>집에 있는 재료들을 여러개 선택하여
+            <br />
+            <p>
+              집에 있는 재료들을 여러개 선택하여
               그 재료로 만들 수 있는 요리들을 한번에 볼 수 있습니다.
-              감자와 당근이 있다면 그 재료로 만들 수 있는 요리를 찾아보세요 !</p> 
-            
+              감자와 당근이 있다면 그 재료로 만들 수 있는 요리를 찾아보세요 !
+            </p>
+
             <a href="#" class="blog__btn">
               보러가기
               <span class="arrow_right"></span>
@@ -99,7 +99,7 @@
             <h5>
               <a href="#">특별한 기능 2</a>
             </h5>
-            <br>
+            <br />
             <p class="fontcolor">요리시작 전 기본적인 TIP이 궁금하다면?</p>
             <p>
               요리를 시작하기 전, 궁금하고 몰랐던 꿀팁들을 알 수 있습니다.
@@ -117,263 +117,137 @@
       <!-- 메인2-3 -- 꿀팁 소개 부분 -->
       <div class="sec04_tip col-lg-3 col-md-3 col-sm-3">
         <a class="sec04_tip_a" href="/TipBoard">
-            <img class="sec04_tip_image" src="../../public/common/img/img_JY/mainTip.png" alt />
+          <img class="sec04_tip_image" src="../../public/common/img/img_JY/mainTip.png" alt />
         </a>
       </div>
       <!-- 메인2-3 -- 꿀팁 소개 부분 -->
     </div>
     <!-- 메인2부분 끝 -->
 
-
     <!-----------------------------------------
                  메인-3 광고부분
-  -------------------------------------------->
+    -------------------------------------------->
     <!-- Banner Begin -->
     <div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src="../../public/common/img/img_oga/banner/banner-1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src="../../public/common/img/img_oga/banner/banner-2.jpg" alt="">
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="banner__pic">
+              <img src="../../public/common/img/img_oga/banner/banner-1.jpg" alt />
             </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="banner__pic">
+              <img src="../../public/common/img/img_oga/banner/banner-2.jpg" alt />
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- 메인3 광고 부분 끝 -->
 
-
-
-
     <!-----------------------------------------
                  메인-4 분류 부분
-  -------------------------------------------->
-
-
-
+    -------------------------------------------->
 
     <!-----------------------------------------
                  메인-5 조회수별 나열 부분
-  -------------------------------------------->
+    -------------------------------------------->
 
-<section class="latest-product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>Latest Products</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+    <section class="latest-product spad">
+      <div class="container">
+        <div class="row">
+
+          <!-- 1번째 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="latest-product__text">
+              <h4>인기레시피</h4>
+              <div class="latest-product__slider owl-carousel">
+
+                <!-- 이 부분이 반복되어야 함 -->
+                <div>
+                  <a href="#" class="latest-product__item">
+                    <div class="latest-product__item__pic">
+                      <!-- 이미지 부분 반복 -->
+                      <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt />
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>Top Rated Products</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="latest-product__item__text">
+                      <!-- 요리제목 반복 -->
+                      <h6>Crab Pool Security</h6>
+                      <!-- 작성자 반복 -->
+                      <span>$30.00</span>
                     </div>
+                  </a>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>Review Products</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="../../public/common/img/img_oga/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+              </div>
             </div>
+          </div>
+          <!-- 1번째 -->
+
+          <!-- 2번째 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="latest-product__text">
+              <h4>많은조회레시피</h4>
+              <div class="latest-product__slider owl-carousel">
+                
+                <!-- 이 부분이 반복되어야 함 -->
+                <div>
+                  <a href="#" class="latest-product__item">
+                    <div class="latest-product__item__pic">
+                      <!-- 이미지 부분 반복 -->
+                      <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt />
+                    </div>
+                    <div class="latest-product__item__text">
+                      <!-- 요리제목 반복 -->
+                      <h6>Crab Pool Security</h6>
+                      <!-- 작성자 반복 -->
+                      <span>$30.00</span>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+            <!-- 2번째 -->
+
+            <!-- 3번째 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="latest-product__text">
+                <h4>최신레시피</h4>
+                <div class="latest-product__slider owl-carousel">
+                  
+                  <!-- 이 부분이 반복되어야 함 -->
+                  <div>
+                    <a href="#" class="latest-product__item">
+                      <div class="latest-product__item__pic">
+                        <!-- 이미지 부분 반복 -->
+                        <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt />
+                      </div>
+                      <div class="latest-product__item__text">
+                        <!-- 요리제목 반복 -->
+                        <h6>Crab Pool Security</h6>
+                        <!-- 작성자 반복 -->
+                        <span>$30.00</span>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+              <!-- 3번째 -->
+            </div>
+          
         </div>
+      </div>
     </section>
     <!------------------ 메인5번 끝 ------------------->
-
-
-
-
-
   </div>
 </template>
 
 
 <style scoped>
-
 /* #mainslider{
   text-align: center;
   align-items: center;
@@ -446,14 +320,13 @@
   text-decoration: none;
   color: #333;
 }
-.sec04_tip_image{
+.sec04_tip_image {
   /* flex: 0 0 auto; */
   width: 100%;
 }
 
-
 /* 사이트소개 부분 css (오가닉) */
-.blog_total{
+.blog_total {
   /* background-color: rgb(255, 246, 201); */
 }
 
@@ -462,13 +335,12 @@
   inline-size: -webkit-fill-available;
   margin-top: 10%;
 }
-.blog__item__text{
+.blog__item__text {
   margin-top: 10%;
 }
-.fontcolor{
+.fontcolor {
   color: blue;
 }
-
 
 /* 인기검색어 부분 css (오키친) */
 .sec01_tag strong {
@@ -516,9 +388,6 @@ a {
   text-align: left;
   margin-top: 30px;
 }
-
-
-
 </style>
 
 
@@ -527,6 +396,7 @@ a {
 // main 1번(배너슬라이더 부분)
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+import axios from "axios";
 
 export default {
   name: "main1",
@@ -545,8 +415,25 @@ export default {
         arrows: false,
         dots: true,
         animatedDots: true
-      }
+      },
+      dbmain2_1: []
     };
+  },
+  created() {
+    this.showmain2_1();
+  },
+
+  methods: {
+    // main2_1 인기검색어 태그로 가지고 오기
+    async showmain2_1() {
+      try {
+        const response = await axios.get("http://localhost:5000/showmain2_1");
+        this.dbmain2_1 = response.data;
+        console.log(this.dbmain2_1);
+      } catch (err) {
+        console.log(err);
+      }
+    }
   }
 };
 </script>
