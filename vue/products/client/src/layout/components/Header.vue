@@ -8,11 +8,18 @@
 
         <nav class="header__menu">
           <ul>
-            <li><a href="/" class="headermenu">홈</a>
+            <li>
+              <a href="/" class="headermenu">홈</a>
             </li>
-            <li><a href="/RecipeBoard" class="headermenu">레시피</a></li>
-            <li><a href="/FboardList" class="headermenu">게시판</a></li>
-            <li><a href="/TipBoard" class="headermenu">Tip</a></li>
+            <li>
+              <a href="/RecipeBoard" class="headermenu">레시피</a>
+            </li>
+            <li>
+              <a href="/FboardList" class="headermenu">게시판</a>
+            </li>
+            <li>
+              <a href="/TipBoard" class="headermenu">Tip</a>
+            </li>
           </ul>
         </nav>
         <!-- <div id="mobile-menu-wrap"></div> -->
@@ -80,7 +87,7 @@ button {
 .headermenu{
   /* background-color: rgb(134, 245, 100); */
   padding: 30px;
-  margin: 0px 30px;
+  margin: 0px -1em;
   border-radius: 80px;
   border-style: none;
   font-weight: bold;
@@ -272,4 +279,6 @@ nav ul {
   display: block;
 }
 /*************************오가닉 header*************************/
-</style>
+
+    
+</style>s

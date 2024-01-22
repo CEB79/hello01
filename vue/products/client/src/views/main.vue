@@ -38,7 +38,7 @@
         <div class="Tag">
           <ul>
             <li>
-              <a href="/category/search.asp?s_value=카레">#카레</a>
+              <a href="/category/search.asp?s_value={{카레}}">#{{카레}}</a>
             </li>
             <li>
               <a href="/category/search.asp?s_value=마요네스">#마요네스</a>
@@ -67,57 +67,46 @@
       <!-- 메인2-1 -- 인기검색어 부분 -->
 
       <!-- 메인2-2 -- 사이트소개 부분 -->
-      <div class="col-lg-3 col-md-3 col-sm-3">
+      <div class="blog_total col-lg-3 col-md-3 col-sm-3">
         <div class="blog__item">
           <div class="blog__item__pic">
             <img src="../../public/common/img/img_JY/siteint_1.jpg" alt />
           </div>
           <div class="blog__item__text">
-            <ul>
-              <li>
-                <i class="fa fa-calendar-o"></i> May 4,2019
-              </li>
-              <li>
-                <i class="fa fa-comment-o"></i> 5
-              </li>
-            </ul>
             <h5>
-              <a href="#">6 ways to prepare breakfast for 30</a>
+              <a href="/RecipeBoard">특별한 기능 1</a>
             </h5>
-            <p>
-              Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-              quaerat
-            </p>
+            <br>
+            <p class="fontcolor">집에 있는 재료로 만들고 싶다면?</p>
+            <br>
+            <p>집에 있는 재료들을 여러개 선택하여
+              그 재료로 만들 수 있는 요리들을 한번에 볼 수 있습니다.
+              감자와 당근이 있다면 그 재료로 만들 수 있는 요리를 찾아보세요 !</p> 
+            
             <a href="#" class="blog__btn">
-              READ MORE
+              보러가기
               <span class="arrow_right"></span>
             </a>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-3">
+      <div href="/TipBoard" class="blog_total col-lg-3 col-md-3 col-sm-3">
         <div class="blog__item">
           <div class="blog__item__pic">
             <img src="../../public/common/img/img_JY/siteint_2.jpg" alt />
           </div>
           <div class="blog__item__text">
-            <ul>
-              <li>
-                <i class="fa fa-calendar-o"></i> May 4,2019
-              </li>
-              <li>
-                <i class="fa fa-comment-o"></i> 5
-              </li>
-            </ul>
             <h5>
-              <a href="#">Visit the clean farm in the US</a>
+              <a href="#">특별한 기능 2</a>
             </h5>
+            <br>
+            <p class="fontcolor">요리시작 전 기본적인 TIP이 궁금하다면?</p>
             <p>
-              Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-              quaerat
+              요리를 시작하기 전, 궁금하고 몰랐던 꿀팁들을 알 수 있습니다.
+              밥을 맛있게 짓는 방법, 달걀 쉽게 까는 방법 등 몰랐던 TIP들을 알아보는 시간을 가져보세요 !
             </p>
-            <a href="#" class="blog__btn">
-              READ MORE
+            <a href="/" class="blog__btn">
+              보러가기
               <span class="arrow_right"></span>
             </a>
           </div>
@@ -127,7 +116,7 @@
 
       <!-- 메인2-3 -- 꿀팁 소개 부분 -->
       <div class="sec04_tip col-lg-3 col-md-3 col-sm-3">
-        <a class="sec04_tip_a" href="../category/tip.asp">
+        <a class="sec04_tip_a" href="/TipBoard">
             <img class="sec04_tip_image" src="../../public/common/img/img_JY/mainTip.png" alt />
         </a>
       </div>
@@ -438,8 +427,8 @@
 }
 /* 꿀팁 소개 부분 css (오키친) */
 .sec04_tip {
-  background-color: rgb(255, 237, 147);
-  padding: 50px 40px;
+  /* background-color: rgb(255, 237, 147); */
+  padding: 0px 0px;
   /* margin: auto; */
   /* align-items: center; */
 }
@@ -458,20 +447,30 @@
   color: #333;
 }
 .sec04_tip_image{
-  flex: 0 0 auto;
-  width: 25%;
+  /* flex: 0 0 auto; */
+  width: 100%;
 }
 
 
 /* 사이트소개 부분 css (오가닉) */
+.blog_total{
+  /* background-color: rgb(255, 246, 201); */
+}
 
 .blog__item__pic img {
   /* img사이즈를 전체 크기에 맞추기 */
   inline-size: -webkit-fill-available;
+  margin-top: 10%;
+}
+.blog__item__text{
+  margin-top: 10%;
+}
+.fontcolor{
+  color: blue;
 }
 
-/* 인기검색어 부분 css (오키친) */
 
+/* 인기검색어 부분 css (오키친) */
 .sec01_tag strong {
   display: block;
 }
