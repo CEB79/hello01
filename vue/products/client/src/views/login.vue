@@ -60,10 +60,13 @@ export default{
                 console.log(res.data[0]);
                 if(res.data[0] == undefined){
                     alert("패스워드가 일치하지 않습니다.")
+                    
                 }if(res.data[0].UserPassword == userPw){
                     const idKey = "UserNo"
                     localStorage.setItem(idKey,res.data[0].UserNo);
                     alert("로그인")
+                    window.location.href= '/';
+
                 }
             }).catch(function(res){
                 console.log(res);
