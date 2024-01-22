@@ -5,7 +5,8 @@ import {checkLogin, checkUserById, createUser, deleteUser, getIdtoUser, getPwtoU
 import {showRecipe, showRecipeDetails, showRecipeIMG} from "./controllers/RBoard.js";
 
 //JY
-import { showMypage } from "./controllers/Product_JY.js";
+import { showMypage, showmyrecipe, showmyboard, deleteboard } from "./controllers/Product_JY.js";
+
 
 const router = express.Router();
 
@@ -21,7 +22,9 @@ router.post('/login', checkLogin);
 
 //JY
 router.post('/showmypage', showMypage);
-// router.post('/mypage_fcount', showMypage_fboard_count);
+router.post('/showmyrecipe', showmyrecipe);
+router.post('/showmyboard', showmyboard);
+router.delete('/board/:name', deleteboard);
 
 //SUN
 router.get('/recipe', showRecipe);

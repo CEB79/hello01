@@ -20,7 +20,7 @@
                     
                 </div>
                 <div class="btnwrap">
-                    <button class="loginbtn" @click="checkLogin">로그인</button><br>
+                    <button class="loginbtn" @click="checkLogin(userPw)">로그인</button><br>
                     <a href="SignChack"><button class="loginbtn">회원가입</button></a>
                 </div>
         </div>
@@ -43,7 +43,7 @@ export default{
 
     methods: {
     // Get All Products
-    async checkLogin() {
+    async checkLogin(userPw) {
         
         if(this.userId == '') {
             alert('아이디를 입력해주세요.');
@@ -57,22 +57,19 @@ export default{
                 UserId: this.userId,
                 UserPassword: this.userPw
             }).then(function(res){
-                console.log(res.data[0].UserPassword);
-                // if(res.data[0].UserPassword == this.userPw){
-
-                // }
+                console.log(res.data[0]);
+                if(res.data[0] == undefined){
+                    alert("패스워드가 일치하지 않습니다.")
+                }if(res.data[0].UserPassword == userPw){
+                    const idKey = "UserNo"
+                    localStorage.setItem(idKey,res.data[0].UserNo);
+                    alert("로그인")
+                }
             }).catch(function(res){
                 console.log(res);
             });
-            // console.log(this.userId[0].value)
-            this.userId = "";
-            this.userPw= "";
-            // this.$router.push();
-            // console.log("성공");
-            // return;
         } catch (err) {
             console.log(err);
-            // console.log("실패");
         }
         },  
        
