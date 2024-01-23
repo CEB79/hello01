@@ -11,22 +11,10 @@
         <td>
           <div class="cateL">
             <div class="cate_list">
-              <a class="cate_list_text" href="#">전체</a>
-              <a class="cate_list_text" href="#">국/찌개</a>
-              <a class="cate_list_text" href="#">튀김/부침개</a>
-              <a class="cate_list_text" href="#">면</a>
-              <a class="cate_list_text" href="#">볶음</a>
-              <a class="cate_list_text" href="#">간식/분식</a>
-              <a class="cate_list_text" href="#">구이</a>
+              <a class="cate_list_text" href="#" v-for="cat in cate" :key="cat.RecipeCate">{{ cat.RecipeCate }}</a>
             </div>
             <div class="cate_list">
-              <a class="cate_list_text" href="#">전체</a>
-              <a class="cate_list_text" href="#">소고기</a>
-              <a class="cate_list_text" href="#">돼지고기</a>
-              <a class="cate_list_text" href="#">닭고기</a>
-              <a class="cate_list_text" href="#">달걀/유제품</a>
-              <a class="cate_list_text" href="#">해산물</a>
-              <a class="cate_list_text" href="#">채소</a>
+              <a class="cate_list_text" href="#" v-for="ingd in ingdn" :key="ingd.ingdName">{{ ingd.ingdName }}</a>
             </div>
           </div>
         </td>
@@ -60,10 +48,14 @@ export default {
   data() {
     return {
       items: [],
+      ingdn: [],
+      cate: [],
     };
   },
   created() {
     this.showRecipe();
+    this.showIngredient();
+    this.showCategory();
   },
   methods: {
     async showRecipe() {
@@ -74,6 +66,22 @@ export default {
         console.log(err);
       }
     },
+    async showIngredient() {
+      try {
+        const response = await axios.get("http://localhost:5000/ingredient");
+        this.ingdn = response.data;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    async showCategory() {
+      try {
+        const response = await axios.get("http://localhost:5000/category");
+        this.cate = response.data;
+      } catch (err) {
+        console.log(err);
+      }
+    }
   }
 }
 </script>
