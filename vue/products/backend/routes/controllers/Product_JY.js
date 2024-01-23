@@ -70,9 +70,9 @@ export const deleterecipe = (req, res) => {
 
 //회원 탈퇴하기(회원데이터 삭제)
 export const deleteUsermy = (req, res) => {
-    const id = req.body.id;
-    console.log("deletuser",id);
+    const id = req.params.id;
     deleteUserM (id, (err, results) => {
+    //    console.log(id)
         if (err){
             res.send(err);
         }else{

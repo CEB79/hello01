@@ -81,7 +81,7 @@
       </table>
     </div>
 
-    <button class="userdel" @click="deleteUser(items.userNo)">탈퇴</button>
+    <button class="userdel" @click="deleteUsermy(items.userNo)">탈퇴</button>
 
   </div>
 </template>
@@ -175,14 +175,18 @@ export default {
       }},
 
     //회원 탈퇴하기(회원데이터 삭제)
-    async deleteUsermy(id){
+    async deleteUsermy(){
+      const UserNo = localStorage.getItem("UserNo");
       try{
-        console.log("user",id);
-        await axios.delete(`http://localhost:5000/deleteUsermy/${id}`,{
+        console.log("user",UserNo);
+        await axios.delete(`http://localhost:5000/deleteUsermy/${UserNo}`,{
         });
+        window.localStorage.removeItem("UserNo");
+        window.localStorage.removeItem("UserId")
+        window.location.href = "/";
       }catch(err){
         console.log(err);
-      }this.showMypage();
+      }
     },
 
   }
