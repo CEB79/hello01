@@ -21,6 +21,7 @@
           <button type="button" class="membermenu" onclick="location.href='/SignUp'" v-show="Logout">회원가입</button>
           <button type="button" class="mypage" onclick="location.href='/Mypage'" v-show="LogOn">마이페이지</button>
           <button type="button" class="logout" @click="logOut" v-show="LogOn" >로그아웃</button>
+          <button type="button" class="logout" onclick="location.href='/UserControl'" v-show="admin" >관리자 페이지</button>
         </div>
       </div>
       <div class="hero__search">
@@ -45,7 +46,8 @@ export default{
     data(){
       return{
       LogOn: false,
-      Logout: true
+      Logout: true,
+      admin: false
     };
   },
   
@@ -61,6 +63,8 @@ export default{
       if(test !== null){
         this.LogOn = true;
         this.Logout = false;
+      }if(test == 1){
+        this.admin = true;
       }
     },
 

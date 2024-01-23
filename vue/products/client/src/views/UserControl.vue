@@ -35,7 +35,7 @@
                 <td>{{ item.UserNa }}</td>
                 <td>{{ item.admin }}</td>
                 <td><button 
-                  class="secession_btn" @click="deleteUser(item.UserNo)">탈퇴</button></td>
+                  class="secession_btn" @click="deleteUser(item.UserNo)" v-bind:disabled="admin">탈퇴</button></td>
               </tr>
 
             </tbody>
@@ -53,13 +53,15 @@ export default {
   data() {
     return {
       items: [],
-      userSerch: ""
+      userSerch: "",
+      admin: false
 
     };
   },
 
   created() {
     this.showUser();
+    this.checkAdmin();
   },
   
   
@@ -68,25 +70,41 @@ export default {
 
   methods: {
     // Get All Products
+
+
+    checkAdmin(){
+      const test = localStorage.getItem("UserNo")
+      if(test != 1){
+          console.log(this.admin)
+            this.admin = true;
+        }else{
+          // this.admin = true;
+        }
+    },
     async showUser() {
       try {
+        // console.log(test)
         const response = await axios.get("http://localhost:5000/user");
         this.items = response.data;
+        
       } catch (err) {
         console.log(err);
       }
     },
 
-    
+
+          
 
     async deleteUser(id){
+      
       try{
-        await axios.delete(`http://localhost:5000/user/${id}`);
-        this.showUser();
-      }catch(err){
-        console.log(err);
-      }
-    },
+        await axios.delete(`http://localhost:5000/user/${id}`,{
+        })
+    }catch (err) {
+      console.log(err);
+    }
+    this.showUser();
+  },
 
     async SerchUserId(id){
       try{
@@ -94,9 +112,9 @@ export default {
         UserId: this.userSerch,
       })  
       this.items = response.data;
-
+      
       if(id ==""){
-        this.showUser()
+        this.showUser();
       }
 
       // console.log(response.data);
