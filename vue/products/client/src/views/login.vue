@@ -120,10 +120,10 @@ export default{
 <style>
 .body{
     margin: 0 0;
-    padding:  10% 30%;
-    
-    
+    padding:  0% 30%;
 }
+    
+    
 .LoginHead{
     margin-bottom: 20px;
     text-align: center;

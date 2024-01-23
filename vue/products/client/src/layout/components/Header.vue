@@ -59,7 +59,7 @@ export default{
     login(){
       const test = localStorage.getItem("UserNo")
 
-      console.log(test);
+      // console.log(test);
       if(test !== null){
         this.LogOn = true;
         this.Logout = false;
