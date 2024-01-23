@@ -10,7 +10,7 @@
                     <label for="id"><i class="bi bi-file-person" />ID</label>
                     <b-form-input id="id" placeholder=" 아이디를 입력해 주세요" v-model="userId"/>
                     <label for="pass"><i class="bi bi-lock" />PW</label>
-                    <b-form-input type="password" id="pass" placeholder=" 비밀번호를 입력해 주세요" v-model="userPw" @keypress="checkLogin(userPw)"/>
+                    <b-form-input type="password" id="pass" placeholder=" 비밀번호를 입력해 주세요" v-model="userPw" @keyup.enter='checkLogin(userPw)'/>
                 </div>
                 <div class="checkForm" >
                     <input type="checkbox" name="IdSave" class="IdSave"> ID 저장
