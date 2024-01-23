@@ -81,6 +81,7 @@ export default {
           // this.admin = true;
         }
     },
+    
     async showUser() {
       try {
         // console.log(test)

@@ -23,7 +23,7 @@ router.post('/login', checkLogin);
 router.post('/showmypage', showMypage);
 router.post('/showmyrecipe', showmyrecipe);
 router.post('/showmyboard', showmyboard);
-router.delete('/board/:name', deleteboard);
+router.delete('/board/:id', deleteboard);
 router.get('/showmain2_1', showmain2_1);
 router.get('/showmain5_like', showmain5_like);
 router.get('/showmain5_view', showmain5_view);
