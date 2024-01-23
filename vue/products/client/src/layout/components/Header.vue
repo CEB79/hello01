@@ -42,7 +42,6 @@
 <script>
 // import router from router
 export default{
-
     data(){
       return{
       LogOn: false,
@@ -51,15 +50,15 @@ export default{
     };
   },
   
+  //함수 실행
   created(){
     this.login();
   },
 
   methods:{
+    //로그인 유무에 따라 보여주는 버튼 결정
     login(){
       const test = localStorage.getItem("UserNo")
-
-      // console.log(test);
       if(test !== null){
         this.LogOn = true;
         this.Logout = false;
@@ -67,7 +66,6 @@ export default{
         this.admin = true;
       }
     },
-
     logOut(){
       window.localStorage.removeItem("UserNo");
       window.location.href= '/';

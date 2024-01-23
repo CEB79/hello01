@@ -1,7 +1,6 @@
-// // import connection
 import db from "../../config/database.js";
  
-// Get All user
+// 유저 전체 조회
 export const getUser = (result) => {
     db.query("SELECT * FROM user", (err, results) => {             
         if(err) {
@@ -14,8 +13,21 @@ export const getUser = (result) => {
     });   
 }
 
-// Get Single User
+// 유저조회(회원가입)
 export const getUserById = (id, result) => {
+    db.query("SELECT * FROM user WHERE UserId = ?", [id], (err, results) => {             
+        if(err) {
+            console.log(err);
+            result(err, null);
+        }else {
+            result(null, results);
+
+        }
+    });   
+}
+
+//유저조회(회원관리)
+export const getUserByIdSerch = (id, result) => {
     db.query("SELECT * FROM user WHERE UserId like ?", [id+"%"], (err, results) => {             
         if(err) {
             console.log(err);
@@ -28,7 +40,7 @@ export const getUserById = (id, result) => {
     });   
 }
 
-// Insert user to Database
+//회원가입
 export const insertUser = (data, result) => {
     db.query("INSERT INTO user SET ?", [data], (err, results) => {             
         if(err) {
@@ -40,7 +52,7 @@ export const insertUser = (data, result) => {
     });   
 };
 
-// Delete Product to Database
+//회원탈퇴
 export const deleteUserById = (id, result) => {
     db.query("DELETE  FROM user WHERE UserNo = ?", [id], (err, results) => {             
         if(err) {
@@ -65,18 +77,19 @@ export const deleteUserById = (id, result) => {
     });   
 }
  
+//로그인 정보 조회
 export const getLogin = (data, result) => {
     db.query("SELECT * FROM user WHERE UserId = ? and UserPassword = ?", [data.UserId, data.UserPassword], (err, results) =>{
         if(err) {
             console.log(err);
             result(err, null);
         }else{
-            // console.log(results)
             result(null, results);
     }
     });
 }
 
+//id 찾기
 export const getId = (data, result) => {
     // console.log(data)
     db.query("SELECT UserId FROM user WHERE UserNa = ? and UserPhon = ?", [data.UserNa, data.UserPhon], (err, results) =>{
@@ -90,6 +103,7 @@ export const getId = (data, result) => {
     });
 }
 
+//pw 찾기
 export const getPw = (data, result) => {
     // console.log(data)
     db.query("SELECT UserPassword FROM user WHERE UserId = ? and UserPhon = ?", [data.UserId, data.UserPhon], (err, results) =>{

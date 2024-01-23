@@ -1,5 +1,6 @@
-import {deleteUserById, getId, getLogin, getPw, getUser, getUserById, insertUser} from "../Models/UserModel.js"
-// Show User
+import {deleteUserById, getId, getLogin, getPw, getUser, getUserById, getUserByIdSerch, insertUser} from "../Models/UserModel.js"
+
+// 유저 전체 조회
 export const showUser = (req, res) => {
     getUser((err, results) => {             
         if(err) {
@@ -10,27 +11,31 @@ export const showUser = (req, res) => {
         }
     });   
 }
-// Get Single Product 
+// 유저 조회(회원가입)
 export const checkUserById = (req, res) => {
     const id = req.params.id;
-    console.log(req.body);
     getUserById(id, (err, results) => {
         if (err){
             res.send(err);
         }else{
             res.json(results);
-            // console.log(results);
-            //  if(results == []){
-            //     alert("사용 가능한 ID 입니다.");
-            // }else{
-            //     alert("사용 불가능한 ID 입니다.");
-            // }e
+        }
+    });
+}
+// 유저 조회(회원관리)
+export const checkUserById2 = (req, res) => {
+    const id = req.params.id;
+    getUserByIdSerch(id, (err, results) => {
+        if (err){
+            res.send(err);
+        }else{
+            res.json(results);
         }
     });
 }
 
 
-
+//회원가입
 export const createUser = (req, res) => {
     const data = req.body;
     insertUser(data, (err, results) => {
@@ -42,7 +47,7 @@ export const createUser = (req, res) => {
     });
 }
 
-// Delete Product
+//회원탈퇴
 export const deleteUser = (req, res) => {
     const id = req.params.id;
     deleteUserById(id, (err, results) => {
@@ -54,23 +59,20 @@ export const deleteUser = (req, res) => {
     });
 }
 
+//로그인 정보 조회
 export const checkLogin = (req, res) =>{
     const data = req.body;
-    // console.log(data.UserId);
     getLogin(data, (err, results) => {
         if (err){
             console.log(err)
             res.send(err);
         }else{
-            console.log("통과");
             res.json(results);
-            console.log(results[0])
         }
-        // console.log(req)
-        // console.log(results[0].UserNo);
     });
 }
 
+//id 찾기
 export const getIdtoUser = (req, res) =>{
     const data = req.body;
     getId(data, (err, results) => {
@@ -82,6 +84,8 @@ export const getIdtoUser = (req, res) =>{
         }
     });
 }
+
+//pw 찾기
 export const getPwtoUser = (req, res) =>{
     const data = req.body;
     getPw(data, (err, results) => {
@@ -93,52 +97,3 @@ export const getPwtoUser = (req, res) =>{
         }
     });
 }
-// Create New User
-
-// // Get Single Product 
-// export const showProductById = (req, res) => {
-//     getProductById(req.params.id, (err, results) => {
-//         if (err){
-//             res.send(err);
-//         }else{
-//             res.json(results);
-//         }
-//     });
-// }
- 
-// // Create New Product
-// export const createProduct = (req, res) => {
-//     const data = req.body;
-//     insertProduct(data, (err, results) => {
-//         if (err){
-//             res.send(err);
-//         }else{
-//             res.json(results);
-//         }
-//     });
-// }
- 
-// // Update Product
-// export const updateProduct = (req, res) => {
-//     const data  = req.body;
-//     const id    = req.params.id;
-//     updateProductById(data, id, (err, results) => {
-//         if (err){
-//             res.send(err);
-//         }else{
-//             res.json(results);
-//         }
-//     });
-// }
- 
-// // Delete Product
-// export const deleteProduct = (req, res) => {
-//     const id = req.params.id;
-//     deleteProductById(id, (err, results) => {
-//         if (err){
-//             res.send(err);
-//         }else{
-//             res.json(results);
-//         }
-//     });
-// }

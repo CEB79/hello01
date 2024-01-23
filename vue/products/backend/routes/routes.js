@@ -1,5 +1,8 @@
 import express from "express";
 //EB
+<<<<<<< HEAD
+import {checkLogin, checkUserById, checkUserById2, createUser, deleteUser, getIdtoUser, getPwtoUser, showUser} from "./controllers/User.js";
+=======
 import {
     checkLogin,
     checkUserById,
@@ -9,6 +12,7 @@ import {
     getPwtoUser,
     showUser
 } from "./controllers/User.js";
+>>>>>>> 5a03fdf485484f1fad86483928a17adac9351c78
 //SUN
 import {
     showRecipe,
@@ -30,6 +34,7 @@ import {
 } from "./controllers/Product_JY.js";
 
 
+
 const router = express.Router();
 
 //EB
@@ -37,6 +42,7 @@ router.get('/user', showUser);
 router.post('/userId', getIdtoUser);
 router.post('/userPw', getPwtoUser);
 router.post('/user/:id', checkUserById);
+router.post('/user2/:id', checkUserById2);
 router.post('/user', createUser);
 router.delete('/user/:id', deleteUser);
 router.post('/login', checkLogin);

@@ -8,30 +8,37 @@
           <div class="col-lg-7">
             <div class="checkout__input" id="sign_up_name">
               <p>이름<span>*</span></p>
-              <input name="username" type="text" id="signUserName"  v-model="userName"/><br />
+              <input
+                name="username"
+                type="text"
+                id="signUserName"
+                v-model="userName"
+              /><br />
             </div>
           </div>
-
-          <!-- <div class="sigh_in_add">
-                                <input type="text" id="sample6_postcode" placeholder="우편번호">
-                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-                                <input type="text" id="sample6_address" placeholder="주소"><br>
-                                <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-                                <input type="text" id="sample6_extraAddress" placeholder="참고항목">
-                            </div> -->
           <div>
             <div class="checkout__input" id="sign_up_id">
               <p>아이디<span>*</span></p>
               <input name="id" type="text" class="testid" v-model="userId" />
-              <button type="button" class="testbtn"  @click="checkUserId(userId)">
+              <button
+                type="button"
+                class="testbtn"
+                @click="checkUserId(userId)"
+              >
                 중복 확인
               </button>
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="checkout__input" >
+            <div class="checkout__input">
               <p>비밀번호<span>*</span></p>
-              <input name="pw" type="password" class="signup_pw" placeholder="8자리 이상 입력 하시오" v-model="userPw"/>
+              <input
+                name="pw"
+                type="password"
+                class="signup_pw"
+                placeholder="8자리 이상 입력 하시오"
+                v-model="userPw"
+              />
             </div>
             <div class="checkout__input">
               <p>비밀번호 확인<span>*</span></p>
@@ -62,9 +69,14 @@
               />
             </div>
           </div>
-          
+
           <div>
-            <button type="button" id="sign_up_btn" @click="signUpButton" disabled>
+            <button
+              type="button"
+              id="sign_up_btn"
+              @click="signUpButton"
+              disabled
+            >
               회 원 가 입
             </button>
           </div>
@@ -77,132 +89,124 @@
 import axios from "axios";
 
 export default {
-
   name: "addUser",
-  data(){
-    return{
-      userName:"",
-      userId:"",
-      userPw:"",
-      userPhon:"",
-      userEmail:""
-      
+  data() {
+    return {
+      userName: "",
+      userId: "",
+      userPw: "",
+      userPhon: "",
+      userEmail: "",
     };
   },
-  
 
   methods: {
+    created() {
+      document.getElementsByClassName("testid").readonly = false;
+    },
     
-    created(){
-      document.getElementsByClassName('testid').readonly = false;
+    //입력한 값을 DB 내용과 조회해서 중복확인
+    async checkUserId(id) {
+      const target = document.getElementById("sign_up_btn");
+      try {
+        await axios
+          .post(`http://localhost:5000/user/${id}`, {
+            UserId: this.userId,
+          })
+          .then(function (res) {
+            if (id == "") {
+              alert("아이디를 입력해주세요");
+              return;
+            }
+            //DB에 값은 값이 존재 하지 않을 시 alert 발생 후 회원가입 버튼 활성화
+            if (res.data[0] == undefined) {
+              alert("사용 가능한 아이디 입니다.");
+              target.disabled = false;
+            } else {
+              alert("사용 불가능한 아이디 입니다.");
+            }
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+      } catch (err) {
+        console.log(err);
+      }
     },
 
-
-      async createUser() {
+    //DB에 해당 정보 insert
+    async createUser() {
       try {
         await axios.post("http://localhost:5000/user", {
+          //insert 위치 지정
           UserNa: this.userName,
           UserId: this.userId,
           UserPassword: this.userPw,
           UserPhon: this.userPhon,
           UserEmail: this.userEmail,
         });
-        console.log(this.userName[0].value)
+        //input 초기화
         this.userName = "";
         this.userId = "";
         this.userPw = "";
         this.userPhon = "";
         this.userEmail = "";
+        //login.vue로 이동
         this.$router.push("/login");
-        console.log("성공");
       } catch (err) {
         console.log(err);
-        console.log("실패");
       }
     },
-    
-    
-    async checkUserId(id){
-  const target = document.getElementById('sign_up_btn');
-      try{
-        await axios.post(`http://localhost:5000/user/${id}`, {
-        UserId: this.userId,
 
-      }).then(function(res){
-        console.log(id);
-        console.log(res.data[0]);
-        if(id == ""){
-          alert("아이디를 입력해주세요");
-          return;
-        }
-        if(res.data[0] == undefined){
-          alert("사용 가능한 아이디 입니다.");
-          target.disabled = false;
-          
-        }else{
-          alert("사용 불가능한 아이디 입니다.");
-        }
-      }).catch(function(err){
-          console.log(err);
-      });  
-      // this.userId = "";
-      // this.$router.push("/");
-      }catch(err){
-      console.log(err);
+
+    signUpButton() {
+      //아이디 입력창 정보를 가져와 내용 유무 확인
+      let testid = document.getElementsByClassName("testid");
+      if (testid[0].value == "") {
+        alert("아이디를 입력해주세요");
+      } else {
+        this.pwCheck();
       }
     },
-  
-
-
-
-
-
-
-
-        signUpButton(){
-          let testid = document.getElementsByClassName("testid");
-          // console.log(testid);
-          if (testid[0].value == ""){
-            alert("아이디를 입력해주세요")
-          } else{
-            this.pwCheck();
-        }
-      },
-        pwCheck() {
-        let pw = document.getElementsByClassName("signup_pw");
-        let pw_check = document.getElementsByClassName("signup_pw_check");
-        if (pw[0].value == pw_check[0].value && pw[0].value.length >= 8) {
-            this.phonCheck()
-        } else if (pw[0].value.length <= 8 || pw_check[0].value.length <= 8) {
+    //비밀번호 8자리 이상, 비밀번호 확인  
+    pwCheck() {
+      let pw = document.getElementsByClassName("signup_pw");
+      let pw_check = document.getElementsByClassName("signup_pw_check");
+      if (pw[0].value == pw_check[0].value && pw[0].value.length >= 8) {
+        this.phonCheck();
+      } else if (pw[0].value.length <= 8 || pw_check[0].value.length <= 8) {
         alert("8자리 이상 입력하세요");
-        } else if (pw[0].value !== pw_check[0].value) {
+      } else if (pw[0].value !== pw_check[0].value) {
         alert("비밀번호가 일치하지 않습니다.");
-    }   return 
-  },
-        phonCheck(){
-            let Pdata= document.getElementsByClassName("PhonData");
-            // console.log(Pdata[0].value)
-            if (Pdata[0].value == ""){
-              alert("전화번호를 입력해주세요")
-            }else if(11<= Pdata[0].value.length <= 13){
-            this.emailCheck()
-            }else {alert("형식에 같게 작성해주세요")}
-          },
-          emailCheck(){
-              let Edata = document.getElementsByClassName('EmailData');
-              if(Edata[0].value == ""){
-              alert("Email을 입력해 주세요");
-            }else{
-                this.createUser();
-                alert("가입 완료");
-              }
-          }
+      }
+      return;
     },
-    
-    
 
-}
+    //전화번호 공백, 자리수 확인
+    phonCheck() {
+      let Pdata = document.getElementsByClassName("PhonData");
+      // console.log(Pdata[0].value)
+      if (Pdata[0].value == "") {
+        alert("전화번호를 입력해주세요");
+      } else if (11 <= Pdata[0].value.length <= 13) {
+        this.emailCheck();
+      } else {
+        alert("형식에 같게 작성해주세요");
+      }
+    },
 
+    //email 내용 확인
+    emailCheck() {
+      let Edata = document.getElementsByClassName("EmailData");
+      if (Edata[0].value == "") {
+        alert("Email을 입력해 주세요");
+      } else {
+        this.createUser();
+        alert("가입 완료");
+      }
+    },
+  },
+};
 </script>
 <style>
 .body {
