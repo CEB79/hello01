@@ -32,6 +32,7 @@
       <table>
         <thead>
           <tr>
+            <th>회원번호</th>
             <th>일자</th>
             <th>제목</th>
             <th>조회수</th>
@@ -40,9 +41,13 @@
         <tbody>
           <tr v-for="myrecipe in myrecipearr" :key="myrecipe.RecipeName">
              <!-- 3개까지 데이터 불러오기 v-for문 사용 -->
+             <td>{{ myrecipe.FKuserID}}</td>
             <td>{{ myrecipe.RecipDate }}</td>
             <td> {{ myrecipe.RecipeName }}</td>
             <td> {{ myrecipe.RecipeView }}</td>
+            <td>
+              <button class="delete_btn" @click="deleterecipe(myrecipe.RecipeName)">삭제</button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -75,6 +80,9 @@
         </tbody>
       </table>
     </div>
+
+    <button class="userdel" @click="deleteUser(items.userNo)">탈퇴</button>
+
   </div>
 </template>
 
@@ -92,7 +100,7 @@ export default {
       recipelength: "", 
       boardlength: "",
       a: "",
-      // b: [],
+      UserDel: [],
     };
   },
 
@@ -100,86 +108,82 @@ export default {
     this.showMypage();
     this.showmyrecipe();
     this.showmyboard();
+
   },
 
   methods: {
     // mypage 회원번호, 이름, 전화번호, 레시피개수, 게시판개수
     async showMypage() {
-      // console.log(items="")
       try {
           const a = localStorage.getItem("UserNo");
-          console.log(a);
-          // this.a=localStorage.setItem(res.data[0].UserNo);
           const response = await axios.post("http://localhost:5000/showmypage",{UserNo:a}); //나중에 로컬스토리지 에서 받은 것으로 변경하기
-          console.log("response",response);
           this.items = response.data;
-          
           // this.itemss = Object.values(this.items[0]);
           // console.log(Object.keys(this.items[0]));
           // console.log(Object.values(this.items[0]));
-          
           this.itemss.UserNo = Object.values(this.items[0])[0];
           this.itemss.UserNa = Object.values(this.items[0])[1];
           this.itemss.UserPhon = Object.values(this.items[0])[2];
-          //아래는 없어도 됨
-          // this.itemss.rboard = Object.values(this.items[0])[3];
-          // this.itemss.fboard = Object.values(this.items[0])[4];
-          // console.log(this.itemss);
-          
       } catch (err) {
         console.log(err);
-      }
-      },
+      }},
 
-      //마이페이지 내가 쓴 레시피 글
+    // 마이페이지 내가 쓴 레시피 글
     async showmyrecipe() {
        try {
-        const a = localStorage.getItem("UserNo");
+         const a = localStorage.getItem("UserNo");
          const response = await axios.post("http://localhost:5000/showmyrecipe",{UserNo:a});
-         console.log(response);
          this.myrecipearr = response.data;
          this.recipelength = this.myrecipearr.length;
-         
-        //  this.myrecipearr.RecipDate=this.myrecipearr.RecipDate.split("T");
-        //  console.log(this.myrecipearr.RecipDate);
-         
-
        } catch (err) {
          console.log(err);
-       }
-     },
+       }},
 
-     //마이페이지 내가 쓴 자유게시판 글
-     async showmyboard() {
+    //마이페이지 내가 쓴 자유게시판 글
+    async showmyboard() {
        try {
         //로컬스토리지 데이터 넣어줌
-        const a = localStorage.getItem("UserNo");
+         const a = localStorage.getItem("UserNo");
          const response = await axios.post("http://localhost:5000/showmyboard",{UserNo:a});
-        //  console.log(response);
+
          this.myboardarr = response.data;
          this.boardlength = this.myboardarr.length;
-         
-
        } catch (err) {
          console.log(err);
-       }
-     },
+       }},
 
-     //자유게시판 글 삭제하기
-     async deleteboard(id){
+    //자유게시판 글 삭제하기
+    async deleteboard(id){
       try{
-        console.log(id)
+        // console.log(id);
         await axios.delete(`http://localhost:5000/board/${id}`,{
-
         });
         this.showmyboard();
       }catch(err){
-
         console.log(err);
-      }
+      }},
+
+    //레시피 글 삭제하기
+    async deleterecipe(id){
+      try{
+        console.log(id);
+        await axios.delete(`http://localhost:5000/reboard/${id}`,{
+        });
+        this.showmyrecipe(); //레시피 초기화 적용
+      }catch(err){
+        console.log(err);
+      }},
+
+    //회원 탈퇴하기(회원데이터 삭제)
+    async deleteUsermy(id){
+      try{
+        console.log("user",id);
+        await axios.delete(`http://localhost:5000/deleteUsermy/${id}`,{
+        });
+      }catch(err){
+        console.log(err);
+      }this.showMypage();
     },
-
-
 
   }
 }
@@ -211,17 +215,20 @@ strong{
   background-color: #7fad39;
   color: white;
 }
-.solidout{
-    /* padding: 10px; */
-    /* margin: 10px; */
-    /* width: auto; */
-    /* border: 1px solid greenyellow; */
-}
+
 .delete_btn{
   height: 26px;
   padding: 0 5px;
   border: solid 1px;
   border-radius: 5px;
+}
+.userdel{
+    margin-top: 29px;
+    height: 26px;
+    padding: 0 30px;
+    border: solid 1px;
+    border-radius: 5px;
+    color: #994d1e;
 }
 
 </style>
