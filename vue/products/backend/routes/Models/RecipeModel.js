@@ -43,3 +43,67 @@ export const getRecipeIMG = (result) => {
         }
     });
 }
+
+export const getIngredient = (result) => {
+    db.query("SELECT * FROM ingredient;", (err, results) => {
+        if (err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    })
+}
+
+export const getCategory = (result) => {
+    db.query("SELECT DISTINCT RecipeCate FROM recipeboard;", (err, results) => {
+        if (err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    })
+}
+
+export const getTitle = (result) => {
+    db.query("SELECT r.TitleImg, r.RecipeName,\n" +
+        "u.UserNa, r.RecipDate, r.RecipeLike, r.RecipeView,\n" +
+        "r.RecipTime, r.RecipeServings\n" +
+        "FROM recipeboard r, user u\n" +
+        "WHERE r.FKuserID=u.UserNo\n" +
+        "AND r.RecipeID=2;", (err, results) => {
+        if (err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    })
+}
+
+export const getIngd = (result) => {
+    db.query("SELECT ingdName, ingdAm\n" +
+        "FROM ingredient\n" +
+        "WHERE FK_Recipe_ID=2;", (err, results) => {
+        if (err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    })
+}
+
+export const getDetail = (result) => {
+    db.query("SELECT RecipeDetailsNo, RecipeDetails, RecipeComImg\n" +
+        "FROM recipedetails\n" +
+        "WHERE recipedetails.FK_recipedetails_recipeboard=2;", (err, results) => {
+        if (err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    })
+}
