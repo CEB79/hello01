@@ -18,7 +18,7 @@
         <!-- <div id="mobile-menu-wrap"></div> -->
         <div class="system">
           <button type="button" class="loginmenu" onclick="location.href='/login'" v-show="Logout">로그인</button>
-          <button type="button" class="membermenu" onclick="location.href='/SignUp'" v-show="Logout">회원가입</button>
+          <button type="button" class="membermenu" onclick="location.href='/SignCheack'" v-show="Logout">회원가입</button>
           <button type="button" class="mypage" onclick="location.href='/Mypage'" v-show="LogOn">마이페이지</button>
           <button type="button" class="logout" @click="logOut" v-show="LogOn" >로그아웃</button>
           <button type="button" class="logout" onclick="location.href='/UserControl'" v-show="admin" >관리자 페이지</button>

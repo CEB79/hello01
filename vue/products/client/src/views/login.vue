@@ -25,7 +25,7 @@
           />
         </div>
         <div class="checkForm">
-          <input type="checkbox" name="IdSave" class="IdSave" /> ID 저장
+          <input type="checkbox" name="IdSave" class="IdSave" v-model="IdSave" /> ID 저장
         </div>
         <div class="FindForm">
           <!-- IdPw.vue 이동 -->
@@ -50,13 +50,29 @@ export default {
     return {
       userId: "",
       userPw: "",
+      IdSave: true
     };
   },
 
+  created(){
+    this.savelogin();
+  },
+
+  
   methods: {
-   
+    //아이디 저장
+    savelogin(){
+      const UserId = localStorage.getItem("UserId");
+      if(this.IdSave == true){
+
+        this.userId = UserId;
+      }
+    },
+    
+    
     //DB 내에 정보를 조회 후 로그인 결정
     async checkLogin(userPw) {
+     
       if (this.userId == "") {
         alert("아이디를 입력해주세요.");
         return;
@@ -76,10 +92,13 @@ export default {
             if (res.data[0] == undefined) {
               alert("아이디가 존재하지 않거나 패스워드가 일치하지 않습니다.");
             }
-            //DB 에서 가져온 데이터와 PW가 일치할 시 alert 메세지 발생 후 LocalStorage에 UserNo 저장 후 메인페이지 이동
+            //DB 에서 가져온 데이터와 PW가 일치할 시 alert 메세지 발생 후 LocalStorage에 UserNo, UserId 저장 후 메인페이지 이동
             if (res.data[0].UserPassword == userPw) {
               const idKey = "UserNo";
+              const saveId = "UserId";
+              // console.log(res.data[0].UserId)
               localStorage.setItem(idKey, res.data[0].UserNo);
+              localStorage.setItem(saveId, res.data[0].UserId);
               alert("로그인");
               window.location.href = "/";
             }
