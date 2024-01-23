@@ -135,7 +135,7 @@ td{
 }
 .body{
     margin: 0 0;
-    padding:  10% 20%;
+    padding:  0% 20%;
     
     
 }

@@ -207,7 +207,7 @@ export default {
 <style>
 .body {
   margin: 0 20%;
-  padding: 10% 10%;
+  padding: 0% 10%;
 }
 
 .checkout__input_add {

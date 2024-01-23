@@ -94,7 +94,7 @@ export default {
 <style>
 .body {
   margin: 0 0;
-  padding: 10% 10%;
+  padding: 0% 10%;
 }
 
 .id_find_name, .id_find_phone, .pw_find_id, .pw_find_phone {

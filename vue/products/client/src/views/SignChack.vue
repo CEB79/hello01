@@ -504,7 +504,7 @@ export default {
 }
 .body {
   margin: 0 0;
-  padding: 10% 10%;
+  padding: 0% 10%;
 }
 .scrollBar1 {
   width: 100%;
