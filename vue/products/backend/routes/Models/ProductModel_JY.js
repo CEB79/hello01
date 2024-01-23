@@ -41,7 +41,7 @@ export const myboard = (UserNo, result) => {
 
 //마이페이지 자유게시판 글 삭제
 export const deleteboardNo = (name, result) => {
-    db.query("DELETE  FROM board WHERE User_userID = ?", [name], (err, results) => {             
+    db.query("DELETE  FROM board WHERE BorderNa = ?", [name], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -69,3 +69,40 @@ export const main2_1 = (result) => {
         }
     });
 }
+
+//main5부분 인기레시피 1~6개 출력
+export const main5_like = (result) => {
+    db.query("SELECT recipeboard.TitleImg, recipeboard.RecipeName, user.UserNa, recipeboard.RecipeLike FROM recipeboard INNER JOIN user ON recipeboard.FKuserID=user.UserNo order BY recipeboard.RecipeLike DESC LIMIT 0,6;", (err, results) => {
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });
+}
+
+//main5부분 조회많은레시피 1~6개 출력
+export const main5_view = (result) => {
+    db.query("SELECT recipeboard.TitleImg, recipeboard.RecipeName, user.UserNa, recipeboard.RecipeView FROM recipeboard INNER JOIN user ON recipeboard.FKuserID=user.UserNo order BY recipeboard.RecipeView DESC LIMIT 0,6", (err, results) => {
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });
+}
+
+//main5부분 최신레시피 1~6개 출력
+export const main5_new = (result) => {
+    db.query("SELECT recipeboard.TitleImg, recipeboard.RecipeName, user.UserNa, recipeboard.RecipDate FROM recipeboard INNER JOIN user ON recipeboard.FKuserID=user.UserNo order BY recipeboard.RecipDate DESC LIMIT 0,6", (err, results) => {
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });
+}
+

@@ -92,6 +92,7 @@ export default {
       recipelength: "", 
       boardlength: "",
       a: "",
+      // b: [],
     };
   },
 
@@ -171,6 +172,7 @@ export default {
         await axios.delete(`http://localhost:5000/board/${name}`);
         this.showmyboard();
       }catch(err){
+
         console.log(err);
       }
     },
