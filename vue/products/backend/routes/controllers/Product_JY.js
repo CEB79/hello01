@@ -8,7 +8,7 @@ export const showMypage = (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });
@@ -21,7 +21,7 @@ export const showmyrecipe = (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });
@@ -34,7 +34,7 @@ export const showmyboard = (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });
@@ -42,12 +42,13 @@ export const showmyboard = (req, res) => {
 
 //마이페이지 자유게시판 글 삭제
 export const deleteboard = (req, res) => {
-    const name = req.param.name;
-    deleteboardNo(name, (err, results) => {
+    const id = req.params.id
+    console.log(id);
+    deleteboardNo(id, (err, results) => {
         if (err){
             res.send(err);
         }else{
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });
@@ -61,7 +62,7 @@ export const showmain2_1 = (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });
@@ -74,7 +75,7 @@ export const showmain5_like = (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });
@@ -87,7 +88,7 @@ export const showmain5_view = (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });
@@ -100,7 +101,7 @@ export const showmain5_new = (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });

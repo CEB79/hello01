@@ -41,6 +41,7 @@ export const myboard = (UserNo, result) => {
 
 //마이페이지 자유게시판 글 삭제
 export const deleteboardNo = (name, result) => {
+    // console.log(name);
     db.query("DELETE  FROM board WHERE BorderNa = ?", [name], (err, results) => {             
         if(err) {
             console.log(err);

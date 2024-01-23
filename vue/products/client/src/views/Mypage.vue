@@ -100,7 +100,6 @@ export default {
     this.showMypage();
     this.showmyrecipe();
     this.showmyboard();
-    this.deleteboard();
   },
 
   methods: {
@@ -167,9 +166,12 @@ export default {
      },
 
      //자유게시판 글 삭제하기
-     async deleteboard(name){
+     async deleteboard(id){
       try{
-        await axios.delete(`http://localhost:5000/board/${name}`);
+        console.log(id)
+        await axios.delete(`http://localhost:5000/board/${id}`,{
+
+        });
         this.showmyboard();
       }catch(err){
 
