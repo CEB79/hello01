@@ -36,29 +36,8 @@
         <div class="Tag">
           <ul>
             <li v-for="dbma2_1 in dbmain2_1" :key="dbma2_1.RecipeName">
-              <a href="/category/search.asp?s_value=카레">#{{ dbma2_1.RecipeName}}</a>
+              <a href="/category/search.asp?s_value=dbma2_1.RecipeName">#{{ dbma2_1.RecipeName}}</a>
             </li>
-            <!-- <li>
-              <a href="/category/search.asp?s_value=마요네스">#마요네스</a>
-            </li>
-            <li>
-              <a href="/category/search.asp?s_value=분식">#분식</a>
-            </li>
-            <li>
-              <a href="/category/search.asp?s_value=브런치">#브런치</a>
-            </li>
-            <li>
-              <a href="/category/search.asp?s_value=집밥">#집밥</a>
-            </li>
-            <li>
-              <a href="/category/search.asp?s_value=치즈듬뿍">#치즈듬뿍</a>
-            </li>
-            <li>
-              <a href="/category/search.asp?s_value=캠핑">#캠핑</a>
-            </li>
-            <li>
-              <a href="/category/search.asp?s_value=간단 꿀조합">#간단 꿀조합</a>
-            </li>-->
           </ul>
         </div>
       </div>
@@ -72,21 +51,16 @@
           </div>
           <div class="blog__item__text">
             <h5>
-              <a href="/RecipeBoard">특별한 기능 1</a>
+              <a class="acolor" href="/RecipeBoard">1. 재료 선택 기능</a>
             </h5>
             <br />
             <p class="fontcolor">집에 있는 재료로 만들고 싶다면?</p>
-            <br />
-            <p>
+            <p class="psize">
               집에 있는 재료들을 여러개 선택하여
               그 재료로 만들 수 있는 요리들을 한번에 볼 수 있습니다.
               감자와 당근이 있다면 그 재료로 만들 수 있는 요리를 찾아보세요 !
             </p>
-
-            <a href="#" class="blog__btn">
-              보러가기
-              <span class="arrow_right"></span>
-            </a>
+            <a class="acolor" href="/RecipeBoard">보러가기</a>
           </div>
         </div>
       </div>
@@ -97,18 +71,15 @@
           </div>
           <div class="blog__item__text">
             <h5>
-              <a href="#">특별한 기능 2</a>
+              <a class="acolor" href="/TipBoard">2. 꿀팁 페이지</a>
             </h5>
             <br />
             <p class="fontcolor">요리시작 전 기본적인 TIP이 궁금하다면?</p>
-            <p>
+            <p class="psize">
               요리를 시작하기 전, 궁금하고 몰랐던 꿀팁들을 알 수 있습니다.
               밥을 맛있게 짓는 방법, 달걀 쉽게 까는 방법 등 몰랐던 TIP들을 알아보는 시간을 가져보세요 !
             </p>
-            <a href="/" class="blog__btn">
-              보러가기
-              <span class="arrow_right"></span>
-            </a>
+            <a class="acolor" href="/TipBoard">  보러가기 </a>
           </div>
         </div>
       </div>
@@ -161,22 +132,24 @@
           <!-- 1번째 -->
           <div class="col-lg-4 col-md-6">
             <div class="latest-product__text">
-              <h4>인기레시피</h4>
+              <h4 class="main5_title">인기레시피</h4>
               <div class="latest-product__slider owl-carousel">
 
                 <!-- 이 부분이 반복되어야 함 -->
-                <div>
+                <div v-for="dbma5_1 in dbmain5_like" :key="dbma5_1.RecipeName">
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <!-- 이미지 부분 반복 -->
-                      <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt />
+                      <img class="imgsize" :src="dbma5_1.TitleImg" alt />
                     </div>
                     <div class="latest-product__item__text">
                       <!-- 요리제목 반복 -->
-                      <h6>Crab Pool Security</h6>
+                      <h6>{{ dbma5_1.RecipeName }}</h6>
                       <!-- 작성자 반복 -->
-                      <span>$30.00</span>
+                      <span>작성자 - {{ dbma5_1.UserNa}}</span>
+                      <span>{{ dbma5_1.RecipeLike }}</span>
                     </div>
+         
                   </a>
                 </div>
 
@@ -188,21 +161,21 @@
           <!-- 2번째 -->
           <div class="col-lg-4 col-md-6">
             <div class="latest-product__text">
-              <h4>많은조회레시피</h4>
+              <h4 class="main5_title">많은조회레시피</h4>
               <div class="latest-product__slider owl-carousel">
                 
                 <!-- 이 부분이 반복되어야 함 -->
-                <div>
+                <div v-for="dbma5_2 in dbmain5_view" :key="dbma5_2.RecipeName">
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
                       <!-- 이미지 부분 반복 -->
-                      <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt />
+                      <img class="imgsize" :src="dbma5_2.TitleImg" alt />
                     </div>
                     <div class="latest-product__item__text">
                       <!-- 요리제목 반복 -->
-                      <h6>Crab Pool Security</h6>
+                      <h6>{{ dbma5_2.RecipeName }}</h6>
                       <!-- 작성자 반복 -->
-                      <span>$30.00</span>
+                      <span>작성자 - {{ dbma5_2.UserNa}}</span>
                     </div>
                   </a>
                 </div>
@@ -215,29 +188,29 @@
             <!-- 3번째 -->
             <div class="col-lg-4 col-md-6">
               <div class="latest-product__text">
-                <h4>최신레시피</h4>
+                <h4 class="main5_title">최신레시피</h4>
                 <div class="latest-product__slider owl-carousel">
                   
                   <!-- 이 부분이 반복되어야 함 -->
-                  <div>
+                  <div v-for="dbma5_3 in dbmain5_new" :key="dbma5_3.RecipeName">
                     <a href="#" class="latest-product__item">
                       <div class="latest-product__item__pic">
                         <!-- 이미지 부분 반복 -->
-                        <img src="../../public/common/img/img_oga/latest-product/lp-1.jpg" alt />
+                        <img class="imgsize" :src="dbma5_3.TitleImg" alt />
                       </div>
                       <div class="latest-product__item__text">
                         <!-- 요리제목 반복 -->
-                        <h6>Crab Pool Security</h6>
+                        <h6>{{ dbma5_3.RecipeName }}</h6>
                         <!-- 작성자 반복 -->
-                        <span>$30.00</span>
+                        <span>작성자 - {{ dbma5_3.UserNa }}</span>
                       </div>
                     </a>
                   </div>
 
                 </div>
               </div>
-              <!-- 3번째 -->
             </div>
+            <!-- 3번째 -->
           
         </div>
       </div>
@@ -254,10 +227,11 @@
 } */
 
 .content {
+  padding-top: 5px;
   /* position: relative; */
   /* width: 1280px; */
 
-  margin: 10px auto;
+  /* margin: 10px auto; */
   /* text-align: center; */
   /* content에서 글씨 센터를 하게 되면 인기검색어도 센터가 되어 깨지게 된다 각 부분 클래스로 적용하기 */
   /* vertical-align: top; */
@@ -293,7 +267,7 @@
        main-2번
 ***********************/
 .main2 {
-  text-align: center;
+  /*text-align: center;*/
   margin: 3em auto;
   width: 1600px;
   /* margin-left: 50px; */
@@ -328,6 +302,7 @@
 /* 사이트소개 부분 css (오가닉) */
 .blog_total {
   /* background-color: rgb(255, 246, 201); */
+  background-color: rgb(245, 245, 245);
 }
 
 .blog__item__pic img {
@@ -339,7 +314,11 @@
   margin-top: 10%;
 }
 .fontcolor {
-  color: blue;
+  color: rgb(97, 97, 243);
+  font-weight: bold;
+}
+.psize{
+  font-size: 15px;
 }
 
 /* 인기검색어 부분 css (오키친) */
@@ -382,12 +361,59 @@
 }
 a {
   text-decoration: none;
-  color: #777;
+  /* color: #ab7272; */
+}
+.acolor{
+  color: #ab7272;
 }
 .Tag {
   text-align: left;
   margin-top: 30px;
 }
+
+
+
+
+/********************** 
+       main-5번 (4번생략됨 ㅠ)
+***********************/
+.main5_title{
+  background-color: #b5d87f;
+  color: white;
+  padding: 0.5em;
+}
+
+.latest-product{
+  margin-top: 3em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+
+.latest-product__item{
+
+}
+
+
+/* 이미지div */
+.latest-product__item__pic{
+
+}
+
+/* 이미지 부분 */
+.imgsize{
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  width: 18em;
+  height: 15em;
+}
+
+/* 요리제목,작성자 text 부분 */
+.latest-product__item__text{
+
+}
+
+
 </style>
 
 
@@ -416,11 +442,17 @@ export default {
         dots: true,
         animatedDots: true
       },
-      dbmain2_1: []
+      dbmain2_1: [],
+      dbmain5_like: [],
+      dbmain5_view: [],
+      dbmain5_new: [],
     };
   },
   created() {
     this.showmain2_1();
+    this.showmain5_like();
+    this.showmain5_view();
+    this.showmain5_new();
   },
 
   methods: {
@@ -433,7 +465,41 @@ export default {
       } catch (err) {
         console.log(err);
       }
-    }
+    },
+
+    // main5_like 인기레시피(좋아요순)
+    async showmain5_like() {
+      try {
+        const response = await axios.get("http://localhost:5000/showmain5_like");
+        this.dbmain5_like = response.data;
+        console.log(this.dbmain5_like);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
+    // main5_view 조회많은레시피
+    async showmain5_view() {
+      try {
+        const response = await axios.get("http://localhost:5000/showmain5_view");
+        this.dbmain5_view = response.data;
+        console.log(this.dbmain5_view);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
+    // main5_new 최신레시피
+    async showmain5_new() {
+      try {
+        const response = await axios.get("http://localhost:5000/showmain5_new");
+        this.dbmain5_new = response.data;
+        console.log(this.dbmain5_new);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
   }
 };
 </script>
