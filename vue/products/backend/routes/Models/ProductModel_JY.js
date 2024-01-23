@@ -16,7 +16,7 @@ export const mypageInfo = (UserNo, result) => {
 // 마이페이지 레시피 글 쓴 개수//
 export const myrecipe = (UserNo, result) => {
     // console.log(UserNo);
-    db.query("SELECT RecipDate, RecipeName, RecipeView FROM recipeboard where recipeboard.FKuserID=?", [UserNo], (err, results) => {
+    db.query("SELECT FKuserID, RecipDate, RecipeName, RecipeView FROM recipeboard where recipeboard.FKuserID=?", [UserNo], (err, results) => {
         if(err) {
             console.log(err);
             result(err, null);
@@ -28,7 +28,6 @@ export const myrecipe = (UserNo, result) => {
 
 // 마이페이지 자유게시판 내가 글 쓴//
 export const myboard = (UserNo, result) => {
-    // console.log(UserNo);
     db.query("SELECT User_userID, BorderDate, BorderNa, BordeView FROM board where board.User_userID=?", [UserNo], (err, results) => {
         if(err) {
             console.log(err);
@@ -40,9 +39,8 @@ export const myboard = (UserNo, result) => {
 }
 
 //마이페이지 자유게시판 글 삭제
-export const deleteboardNo = (name, result) => {
-    // console.log(name);
-    db.query("DELETE  FROM board WHERE BorderNa = ?", [name], (err, results) => {             
+export const deleteboardNo = (id, result) => {
+    db.query("DELETE  FROM board WHERE BorderNa = ?", [id], (err, results) => {             
         if(err) {
             console.log(err);
             result(err, null);
@@ -56,6 +54,29 @@ export const deleteboardNo = (name, result) => {
     });   
 }
 
+//마이페이지 레시피게시판 글 삭제
+export const deleterecipeNo = (id, result) => {
+    db.query("DELETE  FROM recipeboard WHERE RecipeName = ?", [id], (err, results) => {             
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });
+}
+
+//마이페이지 탈퇴 기능 (회원번호 삭제)
+export const deleteUserM = (id, result) => {
+    db.query("DELETE  FROM user WHERE UserNo = ?", [id], (err, results) => {             
+        if(err) {
+            console.log(err);
+            result(err, null);
+        } else {
+            result(null, results);
+        }
+    });   
+}
 
 ////////////////////////Main/////////////////////////
 

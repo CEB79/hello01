@@ -12,8 +12,6 @@
 						<div class="contentus_link">
 							<ul>
 								<li><a href="http://www.bluerecipe.co.kr/" target="_blank">회사소개</a></li>
-								<!-- <li><a href="https://www.recipebank.co.kr/recipeBank/info.pdf" target="_blank">회사소개</a></li> -->
-								<!-- <li class="hr">&nbsp;</li> -->
 								<li><a style="cursor: pointer;">이용약관</a></li>
 								<!-- <li class="hr">&nbsp;</li> -->
 								<li><a style="cursor: pointer;">개인정보 처리방침</a></li>
