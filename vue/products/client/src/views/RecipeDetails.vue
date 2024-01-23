@@ -1,55 +1,94 @@
 <template>
   <section class="RecipeDetails">
-    <div class="recipe_title">
+    <div class="recipe_title" v-for="tit in title" :key="tit.RecipeName">
       <div class="recipe_title_img">
         <!-- 음식 완성 사진-->
-        <img class="title_img" src="../../public/common/img/EB/7.png">
+        <img class="title_img" :src="tit.TitleImg">
       </div>
       <div class="title">
-        <h3>마늘향과 간장소스의 풍부한 맛 <strong>치킨 스테이크</strong></h3><br>
-        <div class="writer">글쓴이 | 게시일자 | 조회수 | 좋아요 개수</div>
+        <h3>{{ tit.RecipeName }}</h3><br>
+        <div class="writer">{{ tit.UserNa }} | {{ tit.RecipDate }} | 조회수 {{ tit.RecipeView }} |
+          좋아요 {{ tit.RecipeLike }}
+        </div>
         <button><img class="btn_img" src="../../public/common/img/icon/heart-icon.png">좋아요</button>
       </div>
       <div class="time_people">
         <div class="time_people1">
           <img src="../../public/common/img/icon/time-check-icon.png">
-          조리시간
+          {{ tit.RecipTime }}분
         </div>
         <div class="time_people1">
           <img src="../../public/common/img/icon/number_person.jpg">
-          3인분</div>
+          {{ tit.RecipeServings }}인분
+        </div>
       </div>
       <div class="Ingredient" style="color: black">
         <div class="Ingredient_name">재료</div>
         <div class="ingredient_Area">
           <ul class="area_details">
-            <li class="area_ingrd">우삼겹 <span>ng</span></li>
-            <li class="area_ingrd">우유 <span>ng</span></li>
-            <li class="area_ingrd">생크림 <span>ng</span></li>
-            <li class="area_ingrd">스파게티면 <span>ng</span></li>
-            <li class="area_ingrd">마늘 <span>n개</span></li>
-            <li class="area_ingrd">감자 <span>n개</span></li>
-            <li class="area_ingrd">양파 <span>n개</span></li>
-            <li class="area_ingrd">물 <span>ng</span></li>
-            <li class="area_ingrd">올리고당 <span>ng</span></li>
-            <li class="area_ingrd">참기름 <span>ng</span></li>
+            <li class="area_ingrd" v-for="ing in indg" :key="ing.ingdName">{{ ing.ingdName }}
+              <span>{{ ing.ingdAm }}</span></li>
           </ul>
         </div>
       </div>
       <div class="recipe_view">
         <div class="view_title">요리 순서</div>
-        <div class="stepDiv1">
+        <div class="stepDiv1" v-for="de in detail" :key="de.RecipeDetailsNo">
           <div class="details">
-            <img class="detils_img" src="../../public/common/img/number/icon_step_1.png">
-            <div class="desc">감자, 양파, 새우는 아이가 먹을 수 있도록 작게 썰어주세요.</div>
+            <div class="desc">{{de.RecipeDetailsNo}}. {{ de.RecipeDetails }}</div>
           </div>
           <div class="process">
-            <img class="cook_process_img" src="../../public/common/img/EB/7-2.jpg">
+            <img class="cook_process_img" :src="de.RecipeComImg">
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
-<script setup>
+<script>
+import axios from "axios";
+
+export default {
+  name: "RecipeDetails",
+  data() {
+    return {
+      title: [],
+      detail: [],
+      ingd: [],
+    };
+  },
+  created() {
+    this.showTitle();
+    this.showIngd();
+    this.showDetail();
+  },
+  methods: {
+    async showTitle() {
+      try {
+        const response = await axios.get("http://localhost:5000/title");
+        this.title = response.data;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    async showDetail() {
+      try {
+        const response = await axios.get("http://localhost:5000/detail");
+        this.detail = response.data;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    async showIngd() {
+      try {
+        const response = await axios.get("http://localhost:5000/ingd");
+        this.ingd = response.data;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  }
+}
+
+
 </script>

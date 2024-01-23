@@ -4,15 +4,6 @@
     text-align: center;
 }
 
-.recipe_title_img {
-    margin: 100px 10% 0 10%;
-
-}
-
-.recipe_title {
-    padding-top: 30px;
-}
-
 .title_img {
     width: 500px;
 }
@@ -83,6 +74,7 @@
 
 .stepDiv1 {
     display: flex;
+    padding: 5px;
 }
 
 .details {
