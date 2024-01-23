@@ -1,10 +1,11 @@
 import express from "express";
 //EB
-import {checkLogin, checkUserById, createUser, deleteUser, getIdtoUser, getPwtoUser, showUser} from "./controllers/User.js";
+import {checkLogin, checkUserById, checkUserById2, createUser, deleteUser, getIdtoUser, getPwtoUser, showUser} from "./controllers/User.js";
 //SUN
 import {showRecipe, showRecipeDetails, showRecipeIMG} from "./controllers/RBoard.js";
 //JY
 import { showMypage, showmyrecipe, showmyboard, deleteboard, showmain2_1, showmain5_like, showmain5_view, showmain5_new } from "./controllers/Product_JY.js";
+
 
 
 const router = express.Router();
@@ -14,6 +15,7 @@ router.get('/user', showUser);
 router.post('/userId', getIdtoUser);
 router.post('/userPw', getPwtoUser);
 router.post('/user/:id', checkUserById);
+router.post('/user2/:id', checkUserById2);
 router.post('/user', createUser);
 router.delete('/user/:id', deleteUser);
 router.post('/login', checkLogin);

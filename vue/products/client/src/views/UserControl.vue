@@ -14,9 +14,11 @@
             v-model="userSerch"
             @keyup="SerchUserId(userSerch)"
           />
-          <button class="userSerch_btn" @click="SerchUserId(userSerch)">검색</button>
+          <button class="userSerch_btn" @click="SerchUserId(userSerch)">
+            검색
+          </button>
         </div>
-        <hr>
+        <hr />
         <div>
           <table class="controlTable">
             <thead>
@@ -34,10 +36,16 @@
                 <td>{{ item.UserId }}</td>
                 <td>{{ item.UserNa }}</td>
                 <td>{{ item.admin }}</td>
-                <td><button 
-                  class="secession_btn" @click="deleteUser(item.UserNo)" v-bind:disabled="admin">탈퇴</button></td>
+                <td>
+                  <button
+                    class="secession_btn"
+                    @click="deleteUser(item.UserNo)"
+                    v-bind:disabled="admin"
+                  >
+                    탈퇴
+                  </button>
+                </td>
               </tr>
-
             </tbody>
           </table>
         </div>
@@ -54,90 +62,75 @@ export default {
     return {
       items: [],
       userSerch: "",
-      admin: false
-
+      admin: false,
     };
   },
 
+  //메소드 실행
   created() {
     this.showUser();
     this.checkAdmin();
   },
-  
-  
-
-  
 
   methods: {
-    // Get All Products
-
-
-    checkAdmin(){
-      const test = localStorage.getItem("UserNo")
-      if(test != 1){
-          console.log(this.admin)
-            this.admin = true;
-        }else{
-          // this.admin = true;
-        }
-    },
     
+    //관리자 아이디 확인    
+    checkAdmin() {
+      const test = localStorage.getItem("UserNo");
+      if (test != 1) {
+        console.log(this.admin);
+        this.admin = true;
+      } else {
+        // this.admin = true;
+      }
+    },
+
+    //회원 정보 조회
     async showUser() {
       try {
         // console.log(test)
         const response = await axios.get("http://localhost:5000/user");
         this.items = response.data;
-        
       } catch (err) {
         console.log(err);
       }
     },
 
-
-          
-
-    async deleteUser(id){
-      
-      try{
-        await axios.delete(`http://localhost:5000/user/${id}`,{
-        })
-    }catch (err) {
-      console.log(err);
-    }
-    this.showUser();
-  },
-
-    async SerchUserId(id){
-      try{
-        const response  = await axios.post(`http://localhost:5000/user/${id}`, {
-        UserId: this.userSerch,
-      })  
-      this.items = response.data;
-      
-      if(id ==""){
-        this.showUser();
+    //회원 정보 삭제
+    async deleteUser(id) {
+      try {
+        await axios.delete(`http://localhost:5000/user/${id}`, {});
+      } catch (err) {
+        console.log(err);
       }
+      this.showUser();
+    },
 
-      // console.log(response.data);
-      }catch(err){
-      console.log(err);
+    //회원 정보 검색
+    async SerchUserId(id) {
+      try {
+        const response = await axios.post(`http://localhost:5000/user2/${id}`, {
+          UserId: this.userSerch,
+        });
+        this.items = response.data;
+        if (id == "") {
+          this.showUser();
+        }
+      } catch (err) {
+        console.log(err);
       }
     },
-    
-
   },
-}
+};
 </script>
 
 <style scoped>
-td{
-  color:black;
+td {
+  color: black;
 }
-.body{
-    margin: 0 0;
-    padding:  0% 20%;
-    
-    
+.body {
+  margin: 0 0;
+  padding: 0% 20%;
 }
 .userSerch_form {
   font-size: 20px;
@@ -160,12 +153,13 @@ td{
   font-size: 15px;
 }
 
-table, th, td{
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
   border-width: 1px;
   margin-top: 20px;
-
 }
 th,
 td {
@@ -174,14 +168,14 @@ td {
   text-align: center;
 }
 
-.secession_btn{
+.secession_btn {
   height: 26px;
   padding: 0 5px;
   border: solid 1px;
   border-radius: 5px;
 }
 
-.controlTable{
+.controlTable {
   width: 100%;
   color: black;
 }
