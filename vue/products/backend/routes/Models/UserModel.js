@@ -44,10 +44,19 @@ export const insertUser = (data, result) => {
 export const deleteUserById = (id, result) => {
     db.query("DELETE  FROM user WHERE UserNo = ?", [id], (err, results) => {             
         if(err) {
-            console.log(err);
             result(err, null);
-            db.query( "DELETE  FROM mypage WHERE FK__user = ?", [id], (err, results) =>{
-                 result(null, results);
+            db.query( "DELETE  FROM board WHERE User_userID = ?", [id], (err, results) =>{
+                if(err){
+                    result(err, null);
+                }
+                db.query( "DELETE  FROM recipeboard WHERE FKuserID = ?", [id], (err, results) =>{
+                    if(err){
+                        result(err, null);
+                    }
+                    result(null, results);
+                }                
+                )
+                result(null, results);
                 // return deleteUserById;
             }) 
         } else {
