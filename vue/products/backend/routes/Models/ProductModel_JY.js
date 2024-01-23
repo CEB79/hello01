@@ -68,14 +68,37 @@ export const deleterecipeNo = (id, result) => {
 
 //마이페이지 탈퇴 기능 (회원번호 삭제)
 export const deleteUserM = (id, result) => {
-    db.query("DELETE  FROM user WHERE UserNo = ?", [id], (err, results) => {             
-        if(err) {
-            console.log(err);
-            result(err, null);
-        } else {
+//     db.query("DELETE  FROM user WHERE UserNo = ?", [id], (err, results) => {             
+//         if(err) {
+//             console.log(err);
+//             result(err, null);
+//         } else {
+//             result(null, results);
+//             // console.log(results);
+//         }
+//     });   
+// }
+db.query("DELETE  FROM user WHERE UserNo = ?", [id], (err, results) => {             
+    if(err) {
+        result(err, null);
+        db.query( "DELETE  FROM board WHERE User_userID = ?", [id], (err, results) =>{
+            if(err){
+                result(err, null);
+            }
+            db.query( "DELETE  FROM recipeboard WHERE FKuserID = ?", [id], (err, results) =>{
+                if(err){
+                    result(err, null);
+                }
+                result(null, results);
+            }                
+            )
             result(null, results);
-        }
-    });   
+            // return deleteUserById;
+        }) 
+    } else {
+        result(null, results);
+    }
+});   
 }
 
 ////////////////////////Main/////////////////////////
