@@ -28,13 +28,12 @@
     color: #74b243;
     display: block;
     font-weight: 500;
-    margin: 0 5px 0 0;
+    margin: 0 13px 0 0;
     text-align: center;
     vertical-align: middle;
     font-size: 15px;
-    height: 41px;
+    height: 35px;
     width: 100%;
-    padding-top: 12px;
 }
 
 .cateL {
@@ -48,7 +47,6 @@
 .cate_list {
     font-size: 15px;
     padding: 6px 0;
-    height: 41px;
 }
 
 .cate_list_text {

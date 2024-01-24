@@ -2,7 +2,7 @@ import BootstrapVue3 from 'bootstrap-vue-3'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-// import { VueCookies } from 'vue-cookies'
+// import VueCookies from 'vue-cookies'
 
 
 
@@ -14,8 +14,8 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 
-// Vue.use(VueCookies);
-// Vue.$cookies.config("7d");
+// app.use(VueCookies);
+// app.$cookies.config("7d");
 const app = createApp(App)
 app.use(BootstrapVue3)
 app.use(router)

@@ -4,7 +4,7 @@
 				<div class="footer__content_first">
 					<div class="footer_content left">
 						<!-- <p class="title">(주)레시판</p> -->
-			
+                        <img class="footerimg" src="../../../public/common/img/img_JY/footer_logo.png" alt="footer" />
 					</div>
 					
 					<div class="footer_content right">
@@ -12,8 +12,6 @@
 						<div class="contentus_link">
 							<ul>
 								<li><a href="http://www.bluerecipe.co.kr/" target="_blank">회사소개</a></li>
-								<!-- <li><a href="https://www.recipebank.co.kr/recipeBank/info.pdf" target="_blank">회사소개</a></li> -->
-								<!-- <li class="hr">&nbsp;</li> -->
 								<li><a style="cursor: pointer;">이용약관</a></li>
 								<!-- <li class="hr">&nbsp;</li> -->
 								<li><a style="cursor: pointer;">개인정보 처리방침</a></li>
@@ -21,6 +19,7 @@
                                 <li><a style="cursor: pointer;">환불정책</a></li>
 							</ul>
 						</div>
+                        <hr>
 						<p class="footer__content_sub_txt">
 							법인명(상호) : (주)레시판 |  사업자등록번호 : 123-45-67890  | 벤처기업 : 제 20200202202호
 							<br>특허 제 20-1234567호  |  통신판매업신고 : 2020-서울관악구-3306  |   개인정보보호책임자 : 김은진
@@ -52,7 +51,7 @@ footer{
 }
 
 .footer__content_first {
-    border-bottom: 1px solid #6D7987;
+    /* border-bottom: 1px solid #6D7987; */
     padding-bottom: 91px;
 }
 
@@ -88,6 +87,7 @@ footer > .footer__inner {
     letter-spacing: -1.05px;
     color: #171F29;
     margin-bottom: 1px;
+    margin: 15px 30px;
 }
 
 .footer_content.left{
@@ -101,6 +101,7 @@ footer > .footer__inner {
 
 .footer_content.right .title {
     margin-bottom: 19px;
+    margin-left: 50px
 }
 .footer_content .title {
     font-weight: bold;
@@ -153,12 +154,16 @@ a:active, a:hover {
 }
 
 .footer_content .footer__content_sub_txt {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     font-weight: 500;
     font-size: 13px;
     line-height: 20px;
     letter-spacing: -0.56875px;
     color: #8B95A2;
+}
+
+.footerimg{
+    width: 300px;
 }
 
 </style>

@@ -104,12 +104,12 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="banner__pic">
-              <img src="../../public/common/img/img_oga/banner/banner-1.jpg" alt />
+              <img src="../../public/common/img/img_JY/banner-1.jpg" alt />
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="banner__pic">
-              <img src="../../public/common/img/img_oga/banner/banner-2.jpg" alt />
+              <img src="../../public/common/img/img_JY/banner-2.jpg" alt />
             </div>
           </div>
         </div>
@@ -236,18 +236,7 @@
   /* content에서 글씨 센터를 하게 되면 인기검색어도 센터가 되어 깨지게 된다 각 부분 클래스로 적용하기 */
   /* vertical-align: top; */
   /* display: flex; */
-
-  /* align-items: center; */
-  /* flex-flow: row nowrap;
-  justify-content: center; */
-
-  /* clear: both; */
 }
-
-/* div {
-  display: block;
-  float: left;
-} */
 
 /********************** 
        main-1번
@@ -273,20 +262,13 @@
   /* margin-left: 50px; */
   /* margin-right: 50px; */
 }
+
 /* 꿀팁 소개 부분 css (오키친) */
 .sec04_tip {
   /* background-color: rgb(255, 237, 147); */
   padding: 0px 0px;
-  /* margin: auto; */
-  /* align-items: center; */
 }
-/* .section01 .sec04_tip a {
-    padding: 40px 30px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    box-sizing: padding-box;
-} */
+
 
 .sec04_tip_a:hover,
 .sec04_tip_a:active,
@@ -300,15 +282,11 @@
 }
 
 /* 사이트소개 부분 css (오가닉) */
-.blog_total {
-  /* background-color: rgb(255, 246, 201); */
-  background-color: rgb(245, 245, 245);
-}
 
 .blog__item__pic img {
   /* img사이즈를 전체 크기에 맞추기 */
   inline-size: -webkit-fill-available;
-  margin-top: 10%;
+  margin-top: 15px;
 }
 .blog__item__text {
   margin-top: 10%;
@@ -329,22 +307,12 @@
   display: block;
 }
 
-/* .section01 { 전체구조
-  margin: 100px auto;
-  display: table;
-}  */
-
 .sec01_tag h2 {
   font-size: 40px;
   color: #333;
   /* line-height: 1.1; */
   /* font-weight: normal; */
 }
-/* .Tag {
-  position: relative;
-  text-align: center;
-  margin-bottom: 20px;
-} */
 .Tag a {
   font-size: 20px;
   /* line-height: 25px; */
@@ -371,11 +339,17 @@ a {
   margin-top: 30px;
 }
 
+/********************** 
+       main-3번
+***********************/
+.banner__pic{
+  margin: 0 30px;
+}
 
 
 
 /********************** 
-       main-5번 (4번생략됨 ㅠ)
+       main-4번
 ***********************/
 .main5_title{
   background-color: #b5d87f;
@@ -461,7 +435,6 @@ export default {
       try {
         const response = await axios.get("http://localhost:5000/showmain2_1");
         this.dbmain2_1 = response.data;
-        console.log(this.dbmain2_1);
       } catch (err) {
         console.log(err);
       }
@@ -472,7 +445,6 @@ export default {
       try {
         const response = await axios.get("http://localhost:5000/showmain5_like");
         this.dbmain5_like = response.data;
-        console.log(this.dbmain5_like);
       } catch (err) {
         console.log(err);
       }
@@ -483,7 +455,7 @@ export default {
       try {
         const response = await axios.get("http://localhost:5000/showmain5_view");
         this.dbmain5_view = response.data;
-        console.log(this.dbmain5_view);
+        // console.log(this.dbmain5_view);
       } catch (err) {
         console.log(err);
       }
@@ -494,7 +466,6 @@ export default {
       try {
         const response = await axios.get("http://localhost:5000/showmain5_new");
         this.dbmain5_new = response.data;
-        console.log(this.dbmain5_new);
       } catch (err) {
         console.log(err);
       }

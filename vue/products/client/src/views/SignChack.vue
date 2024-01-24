@@ -486,9 +486,10 @@
 
 export default {
   methods: {
+   
+    //동의 확인
     NextPage() {
         const acc = document.getElementsByClassName("acc-or");
-        // acc.checked = true
         if(acc[0].checked == true && acc[1].checked == true ){
             location.href = "SignUp"
         }else{alert("약관에 동의하세요");

@@ -18,7 +18,7 @@
         <!-- <div id="mobile-menu-wrap"></div> -->
         <div class="system">
           <button type="button" class="loginmenu" onclick="location.href='/login'" v-show="Logout">로그인</button>
-          <button type="button" class="membermenu" onclick="location.href='/SignUp'" v-show="Logout">회원가입</button>
+          <button type="button" class="membermenu" onclick="location.href='/SignChack'" v-show="Logout">회원가입</button>
           <button type="button" class="mypage" onclick="location.href='/Mypage'" v-show="LogOn">마이페이지</button>
           <button type="button" class="logout" @click="logOut" v-show="LogOn" >로그아웃</button>
           <button type="button" class="logout" onclick="location.href='/UserControl'" v-show="admin" >관리자 페이지</button>
@@ -42,7 +42,6 @@
 <script>
 // import router from router
 export default{
-
     data(){
       return{
       LogOn: false,
@@ -51,15 +50,15 @@ export default{
     };
   },
   
+  //함수 실행
   created(){
     this.login();
   },
 
   methods:{
+    //로그인 유무에 따라 보여주는 버튼 결정
     login(){
       const test = localStorage.getItem("UserNo")
-
-      // console.log(test);
       if(test !== null){
         this.LogOn = true;
         this.Logout = false;
@@ -67,7 +66,6 @@ export default{
         this.admin = true;
       }
     },
-
     logOut(){
       window.localStorage.removeItem("UserNo");
       window.location.href= '/';
