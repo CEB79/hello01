@@ -104,12 +104,12 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="banner__pic">
-              <img src="../../public/common/img/img_oga/banner/banner-1.jpg" alt />
+              <img src="../../public/common/img/img_JY/banner-1.jpg" alt />
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="banner__pic">
-              <img src="../../public/common/img/img_oga/banner/banner-2.jpg" alt />
+              <img src="../../public/common/img/img_JY/banner-2.jpg" alt />
             </div>
           </div>
         </div>
@@ -282,15 +282,11 @@
 }
 
 /* 사이트소개 부분 css (오가닉) */
-.blog_total {
-  /* background-color: rgb(255, 246, 201); */
-  background-color: rgb(245, 245, 245);
-}
 
 .blog__item__pic img {
   /* img사이즈를 전체 크기에 맞추기 */
   inline-size: -webkit-fill-available;
-  margin-top: 10%;
+  margin-top: 15px;
 }
 .blog__item__text {
   margin-top: 10%;
@@ -343,11 +339,17 @@ a {
   margin-top: 30px;
 }
 
+/********************** 
+       main-3번
+***********************/
+.banner__pic{
+  margin: 0 30px;
+}
 
 
 
 /********************** 
-       main-5번 (4번생략됨 ㅠ)
+       main-4번
 ***********************/
 .main5_title{
   background-color: #b5d87f;

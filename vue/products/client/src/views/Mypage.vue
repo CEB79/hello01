@@ -81,7 +81,7 @@
       </table>
     </div>
 
-    <button class="userdel" @click="deleteUsermy(items.userNo)">탈퇴</button>
+    <button class="userdel" @click="deleteUsermy()">탈퇴</button>
 
   </div>
 </template>
@@ -100,7 +100,7 @@ export default {
       recipelength: "", 
       boardlength: "",
       a: "",
-      UserDel: [],
+
     };
   },
 
