@@ -1,4 +1,4 @@
-import { mypageInfo, myrecipe , myboard, deleteboardNo, deleterecipeNo, deleteUserM, main2_1, main5_like, main5_view, main5_new } from "../Models/ProductModel_JY.js"
+import { mypageInfo, myrecipe , myboard, deleteboardNo, deleterecipeNo, deleteUserM, main2_1, main5_like, main5_view, main5_new } from "../Models/ProductModel.js"
 
 
 /////////////////////////////////////////

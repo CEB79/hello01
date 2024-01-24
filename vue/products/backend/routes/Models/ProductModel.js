@@ -105,7 +105,7 @@ db.query("DELETE  FROM user WHERE UserNo = ?", [id], (err, results) => {
 
 //main2_1부분 인기검색어 1~10개 출력
 export const main2_1 = (result) => {
-    db.query("SELECT recipeboard.RecipeName FROM recipeboard LIMIT 0,10", (err, results) => {
+    db.query("SELECT recipeboard.RecipeName FROM recipeboard order BY recipeboard.RecipeLike DESC LIMIT 0,10", (err, results) => {
         if(err) {
             console.log(err);
             result(err, null);
