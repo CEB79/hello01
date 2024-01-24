@@ -23,6 +23,7 @@
         </div>
       </div>
 
+      <!-- 게시판 시작 -->
       <div id="list_table" class="skin1">
         <br />
         <div id="fboardTable">
@@ -37,309 +38,28 @@
                 <th scope="col" class="a_count">조회</th>
               </tr>
             </thead>
+
             <tbody>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765950&amp;page=3"
-                    class="photolink"
-                    >45</a
-                  >
-                </td>
-                <td class="title">
-  <router-link to="/FboardDetail">
-    <a> 후라이팬 추천요 </a>
-  </router-link>
-  <em>4</em>
-</td>
-                <td class="user_function">..</td>
-                <td class="regdate numbers" title="2024-01-16 15:39:43">
-                  15:39:43
-                </td>
-                <td class="numbers">494</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765949&amp;page=3"
-                    class="photolink"
-                    >44</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765949&amp;page=3"
-                    >양식조리사 과정 준비</a
-                  >
-                  <em class="best">31</em>
-                </td>
-                <td class="user_function">..</td>
-                <td class="regdate numbers" title="2024-01-16 15:38:10">
-                  15:38:10
-                </td>
-                <td class="numbers">1,977</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765948&amp;page=3"
-                    class="photolink"
-                    >43</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765948&amp;page=3"
-                    >신박한 살림 아이템 하나</a
-                  >
-                  <em>2</em>
-                </td>
-                <td class="user_function">살림</td>
-                <td class="regdate numbers" title="2024-01-16 15:38:05">
-                  15:38:05
-                </td>
-                <td class="numbers">1,830</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765947&amp;page=3"
-                    class="photolink"
-                    >42</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765947&amp;page=3"
-                    >동네 정신의학과 갑니다.</a
-                  >
-                  <em>10</em>
-                </td>
-                <td class="user_function">ㅇㅇ</td>
-                <td class="regdate numbers" title="2024-01-16 15:37:32">
-                  15:37:32
-                </td>
-                <td class="numbers">1,379</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765946&amp;page=3"
-                    class="photolink"
-                    >41</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765946&amp;page=3"
-                    >제사상 다들 차리시나요?
-                  </a>
-                  <em class="best">11</em>
-                </td>
-                <td class="user_function">산소</td>
-                <td class="regdate numbers" title="2024-01-16 15:35:06">
-                  15:35:06
-                </td>
-                <td class="numbers">1,036</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765945&amp;page=3"
-                    class="photolink"
-                    >40</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765945&amp;page=3"
-                    >엄마가 전화를 절대로 안걸어요
-                  </a>
-                  <em>10</em>
-                </td>
-                <td class="user_function">00</td>
-                <td class="regdate numbers" title="2024-01-16 15:33:11">
-                  15:33:11
-                </td>
-                <td class="numbers">1,470</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765944&amp;page=3"
-                    class="photolink"
-                    >39</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765944&amp;page=3"
-                    >제가 그리 사랑받고 자랐다네요</a
-                  >
-                  <em>5</em>
-                </td>
-                <td class="user_function">..</td>
-                <td class="regdate numbers" title="2024-01-16 15:31:56">
-                  15:31:56
-                </td>
-                <td class="numbers">1,554</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765943&amp;page=3"
-                    class="photolink"
-                    >38</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765943&amp;page=3"
-                    >사람들 만나는게 피곤해요</a
-                  >
-                  <em>8</em>
-                </td>
-                <td class="user_function">..</td>
-                <td class="regdate numbers" title="2024-01-16 15:29:01">
-                  15:29:01
-                </td>
-                <td class="numbers">1,274</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765942&amp;page=3"
-                    class="photolink"
-                    >37</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765942&amp;page=3"
-                    >동남아 요리에 필요한 향신료 반반씩 나누어 사실 분?</a
-                  >
-                  <em class="best">16</em>
-                </td>
-                <td class="user_function">nurse</td>
-                <td class="regdate numbers" title="2024-01-16 15:26:07">
-                  15:26:07
-                </td>
-                <td class="numbers">1,269</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765941&amp;page=3"
-                    class="photolink"
-                    >36</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765941&amp;page=3"
-                    >집주인이 전세집 실크벽지 도배하라네요</a
-                  >
-                  <em class="best">33</em>
-                </td>
-                <td class="user_function">세입자</td>
-                <td class="regdate numbers" title="2024-01-16 15:25:14">
-                  15:25:14
-                </td>
-                <td class="numbers">2,932</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765940&amp;page=3"
-                    class="photolink"
-                    >35</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765940&amp;page=3"
-                    >오븐이 있으면 에어프라이어 살 필요 없을까요?</a
-                  >
-                  <em>8</em>
-                </td>
-                <td class="user_function">오븐과 에어..</td>
-                <td class="regdate numbers" title="2024-01-16 15:23:34">
-                  15:23:34
-                </td>
-                <td class="numbers">730</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765939&amp;page=3"
-                    class="photolink"
-                    >34</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765939&amp;page=3"
-                    >창업을 하고 싶은데요
-                  </a>
-                  <em class="best">18</em>
-                </td>
-                <td class="user_function">1일1거짓말..</td>
-                <td class="regdate numbers" title="2024-01-16 15:18:06">
-                  15:18:06
-                </td>
-                <td class="numbers">766</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765937&amp;page=3"
-                    class="photolink"
-                    >33</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765937&amp;page=3"
-                    >아래 자꾸 한반도에서 전쟁이 난다는 글이 눈에 거슬려서..</a
-                  >
-                  <em>5</em>
-                </td>
-                <td class="user_function">흠</td>
-                <td class="regdate numbers" title="2024-01-16 15:16:22">
-                  15:16:22
-                </td>
-                <td class="numbers">770</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765936&amp;page=3"
-                    class="photolink"
-                    >32</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765936&amp;page=3"
-                    >난 질투같은거 전혀 안해~ 라고말하는 사람</a
-                  >
-                  <em class="best">22</em>
-                </td>
-                <td class="user_function">나사</td>
-                <td class="regdate numbers" title="2024-01-16 15:15:40">
-                  15:15:40
-                </td>
-                <td class="numbers">1,214</td>
-              </tr>
-              <tr>
-                <td class="numbers">
-                  <a
-                    href="read.php?bn=15&amp;num=3765935&amp;page=3"
-                    class="photolink"
-                    >31</a
-                  >
-                </td>
-                <td class="title">
-                  <a href="read.php?bn=15&amp;num=3765935&amp;page=3"
-                    >지긋지긋한 제사</a
-                  >
-                  <em class="best">16</em>
-                </td>
-                <td class="user_function">큰며늘</td>
-                <td class="regdate numbers" title="2024-01-16 15:13:31">
-                  15:13:31
-                </td>
-                <td class="numbers">1,718</td>
-              </tr>
+              <!-- v-for 반복문 돌린다. 글번호, 제목, 글쓴이, 게시일, 조회수 순으로  -->
+       
+                <tr v-for="bRow in boardItem" :key="bRow.BorderNa">
+                  <td class="numbers">
+                    <a href="#" class="post">{{ bRow.BorderNo }}</a>
+                  </td>
+                  <td class="title">
+                    <router-link to="/FboardDetail"><a> {{ bRow.BorderNa }} </a></router-link>
+                    <em>1</em>
+                  </td>
+                  <td class="user_function">{{ bRow.UserNa }}</td>
+                  <td class="regdate numbers" title="2024-01-16 15:39:43">{{ bRow.BorderDate }}</td>
+                  <td class="numbers">{{ bRow.BordeView }}</td>
+                </tr>
+        
             </tbody>
           </table>
+          <!-- 게시판테이블 끝 -->
+
+          <!-- 버튼 -->
           <div style="text-align: right; margin: 10px">
             <!-- router-link를 사용하여 버튼 클릭 시 경로를 변경 -->
             <router-link to="/FboardWrite">
@@ -436,7 +156,35 @@
   </container>
 </template>
 
+<script>
+import axios from "axios";
+//
+export default {
+  name: "main1",
+  data() {
+    return {
+      boardItem: [],
+    };
+  },
+  created() {
+    this.createBoardList();
+  },
 
+  methods: {
+    // main2_1 인기검색어 태그로 가지고 오기
+    async createBoardList() {
+      try {
+        const response = await axios.get("http://localhost:5000/boardList");
+        // route.js안에 get 과 통일시킴. get해서 response에 데이터를 저장할 것이다
+        this.boardItem = response.data;
+        console.log(this.boardItem);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  },
+};
+</script>
 
 <style scoped>
 h1,

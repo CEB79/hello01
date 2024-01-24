@@ -1,20 +1,48 @@
 import db from "../../config/database.js";
 
+export const getBoardList = (result) => {
+  db.query("SELECT BorderNo, BorderNa, user.UserNa, BorderDate, BordeView " +
+  "FROM board INNER JOIN user ON board.User_userID = user.UserNo " +
+  "ORDER BY `BorderNo` DESC", (err, results) => {             
+      if(err) {
+          console.log(err);
+          result(err, null);
+      } else {
+          result(null, results);
+          // console.log(results);
+      }
+  });   
+}
 
-//board 테이블에 아래 데이터 추가
 
-export const insertBoard = (data, result) => {
-  const query = "INSERT INTO board (BorderNo, BorderNa, User_userID, BorderDt, BorderDate, BorderLike, BordeView) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-  db.query(query, [data.BorderNo, data.BorderNa, data.User_userID, data.BorderDt, data.BorderDate, data.BorderLike, data.BordeView], (err, results) => {
-    if (err) {
-      console.error(err);
-      result(err, null);
-    } else {
-      result(null, results);
-    }
-  });
-};
+// // Get All board List
+// export const getBoardList = (result) => {
+//   db.query("SELECT * FROM board", (err, results) => {             
+//       if(err) {
+//           console.log(err);
+//           result(err, null);
+//       } else {
+//           result(null, results);
+//           // console.log(results);
+//       }
+//   });   
+// }
+
+
+
+// //board 테이블에 아래 데이터 추가
+// // Insert Into board Table
+// export const insertBoard = (data, result) => {
+//   db.query("INSERT INTO board SET ?", [data], (err, results) => {
+//      if(err) {
+//       console.log(err);
+//       result(err, null);
+//     } else {
+//       result(null, results);
+//     }
+//   });
+// };
 
 
 //board 테이블에서 글 목록을 조회?? 미완성
