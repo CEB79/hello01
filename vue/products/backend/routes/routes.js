@@ -38,10 +38,6 @@ router.get('/recipedetails', showRecipeDetails);
 router.get('/recipeimg', showRecipeIMG);
 
 
-//EJ 컨트롤러 안에 있는 js파일의 이름을 가져와야함.
-// router.get('/insertBoard', insertBoard) // board에 입력글 추가하고 싶다
-router.get('/boardList', createBoardList) 
-// boardList 게시판목록에 제목,글쓴이,날짜 끌어와서 추가하고 싶다
 
 
 export default router;

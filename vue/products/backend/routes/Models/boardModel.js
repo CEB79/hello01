@@ -1,7 +1,9 @@
 import db from "../../config/database.js";
 
 export const getBoardList = (result) => {
-  db.query("SELECT BorderNo, BorderNa, user.UserNa, BorderDate, BordeView FROM board INNER JOIN user ON board.User_userID = user.UserNo", (err, results) => {             
+  db.query("SELECT BorderNo, BorderNa, user.UserNa, BorderDate, BordeView " +
+  "FROM board INNER JOIN user ON board.User_userID = user.UserNo " +
+  "ORDER BY `BorderNo` DESC", (err, results) => {             
       if(err) {
           console.log(err);
           result(err, null);
