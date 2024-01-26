@@ -53,7 +53,6 @@
       </table>
     </div>
 
-
     <div class="mypageinfo solidout">
         <strong>나의 게시판</strong>
         <!-- <button>더보기</button> -->
@@ -155,10 +154,14 @@ export default {
     //자유게시판 글 삭제하기
     async deleteboard(id){
       try{
+        if (confirm("[게시판] 정말 삭제하시겠습니까?")){ 
         // console.log(id);
         await axios.delete(`http://localhost:5000/board/${id}`,{
         });
         this.showmyboard();
+      } else {
+        return;
+      }
       }catch(err){
         console.log(err);
       }},
@@ -166,10 +169,14 @@ export default {
     //레시피 글 삭제하기
     async deleterecipe(id){
       try{
+        if (confirm("[레시피] 정말 삭제하시겠습니까?")){ 
         console.log(id);
         await axios.delete(`http://localhost:5000/reboard/${id}`,{
         });
         this.showmyrecipe(); //레시피 초기화 적용
+      } else {
+        return;
+      }
       }catch(err){
         console.log(err);
       }},
@@ -178,12 +185,16 @@ export default {
     async deleteUsermy(){
       const UserNo = localStorage.getItem("UserNo");
       try{
+        if (confirm("정말 탈퇴하시겠습니까?")){ 
         console.log("user",UserNo);
         await axios.delete(`http://localhost:5000/deleteUsermy/${UserNo}`,{
         });
         window.localStorage.removeItem("UserNo");
         window.localStorage.removeItem("UserId")
         window.location.href = "/";
+      } else {
+        return;
+      }
       }catch(err){
         console.log(err);
       }
